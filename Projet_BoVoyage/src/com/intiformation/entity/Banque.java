@@ -23,7 +23,7 @@ public class Banque implements Serializable{
 	@Column(name = "nom")
 	String NomBanque;
 	@Column(name = "numeroCB")
-	double NumeroBanque;
+	private double NumeroBanque;
 	@Column(name = "solde")
 	double solde;
 	
