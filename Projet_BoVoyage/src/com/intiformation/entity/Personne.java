@@ -1,15 +1,36 @@
 package com.intiformation.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.Table;
+
+@Entity(name="personne")
+@Table(name="personnes")
+@Inheritance
 public abstract class Personne {
 	
 	//Déclaration des attributs
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_personne")
 	private int idPersonne;
+	@Column(name = "civilite")
 	private int civilite;
+	@Column(name = "nom")
 	private String nom;
+	@Column(name = "prenom")
 	private String prenom;
+	@Column(name = "age")
 	private int age;
+	@Column(name = "adresse")
 	private String adresse;
+	@Column(name = "telephone")
 	private String telephone;
+	@Column(name = "email")
 	private String email;
 	
 	
