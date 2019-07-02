@@ -20,7 +20,7 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<!-- Annotations des beans -->
-	<context:component-scan base-package="com.intiformation.projet"/>
+	<context:component-scan base-package="com.intiformation"/>
 
 	<!-- Annotations des injections automatiques -->
 	<context:annotation-config/>
@@ -34,10 +34,10 @@
 	
 	<bean id="dataSourceBean"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" 	value="${db.driver}" />
-		<property name="url" 				value="${db.url}" />
-		<property name="username" 			value="${db.username}" />
-		<property name="password" 			value="${db.password}" />
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
 
 	</bean>
 	
@@ -68,15 +68,15 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.intiformation.projet.modele.Banque</value>	
-				<value>com.intiformation.projet.modele.Client</value>
-				<value>com.intiformation.projet.modele.Agent</value>
-				<value>com.intiformation.projet.modele.Personne</value>
-				<value>com.intiformation.projet.modele.Accompagnant</value>
-				<value>com.intiformation.projet.modele.Role</value>
-				<value>com.intiformation.projet.modele.DossierReservation</value>
-				<value>com.intiformation.projet.modele.Formule</value>	
-				<value>com.intiformation.projet.modele.Hotel</value>
-				<value>com.intiformation.projet.modele.Voiture</value>	
+<!-- 				<value>com.intiformation.projet.modele.Client</value> -->
+<!-- 				<value>com.intiformation.projet.modele.Agent</value> -->
+<!-- 				<value>com.intiformation.projet.modele.Personne</value> -->
+<!-- 				<value>com.intiformation.projet.modele.Accompagnant</value> -->
+<!-- 				<value>com.intiformation.projet.modele.Role</value> -->
+<!-- 				<value>com.intiformation.projet.modele.DossierReservation</value> -->
+<!-- 				<value>com.intiformation.projet.modele.Formule</value>	 -->
+<!-- 				<value>com.intiformation.projet.modele.Hotel</value> -->
+<!-- 				<value>com.intiformation.projet.modele.Voiture</value>	 -->
 			</list>
 		</property>
 
