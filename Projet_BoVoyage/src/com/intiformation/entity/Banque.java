@@ -21,11 +21,11 @@ public class Banque implements Serializable{
 	@Column(name = "id_banque")
 	private int idBanque;
 	@Column(name = "nom")
-	String NomBanque;
+	private String NomBanque;
 	@Column(name = "numeroCB")
 	private double NumeroBanque;
 	@Column(name = "solde")
-	double solde;
+	private double solde;
 	
 	/* ___________________ Constructeurs ________________________*/
 	
