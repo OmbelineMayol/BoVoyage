@@ -1,6 +1,7 @@
 package com.intiformation.entity;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 
 @Entity(name= "client")
 @Table(name= "clients")
+@DiscriminatorValue("Client")
 public class Client extends Personne{
 
 	// Déclaration des attributs
