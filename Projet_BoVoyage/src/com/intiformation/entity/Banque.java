@@ -14,12 +14,12 @@ import javax.persistence.Table;
 public class Banque implements Serializable{
 	
 	
-	/* ___________________ Attributs ________________________*/
+	/* ___________________ Attributs Ici ________________________*/
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_banque")
-	int idBanque;
+	private int idBanque;
 	@Column(name = "nom")
 	String NomBanque;
 	@Column(name = "numeroCB")
