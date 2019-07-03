@@ -39,6 +39,9 @@ public class Client extends Personne{
 	@OneToMany(mappedBy="client")
 	private List<Accompagnant> listeAccompagnants; 
 	
+	@OneToOne(mappedBy="client")
+	private Reservation reservation;
+	
 	// Déclaration des constructeurs
 	public Client() {
 		super();
@@ -106,6 +109,14 @@ public class Client extends Personne{
 
 	public void setListeAccompagnants(List<Accompagnant> listeAccompagnants) {
 		this.listeAccompagnants = listeAccompagnants;
+	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
 	}
 	
 

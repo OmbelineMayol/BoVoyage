@@ -1,9 +1,15 @@
 package com.intiformation.bovoyage.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity(name = "Reservation")
@@ -35,7 +41,12 @@ public class Reservation {
 	private int nbreAccompagnant;
 
 	//Transformation de l'association UML en java
+	@ManyToOne
+	@JoinColumn(name="fomule_id", referencedColumnName="id_formule")
 	private Formule formule;
+	
+	@OneToOne
+	@JoinColumn(name="client_id", referencedColumnName="id_client")
 	private Client client;
 	
 	

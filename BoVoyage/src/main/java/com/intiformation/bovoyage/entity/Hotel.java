@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity(name="hotel")
@@ -34,6 +36,8 @@ public class Hotel {
 	
 	
 	/* --------------- DECLARATION DES ASSOCIATIONS--------------------*/
+	@ManyToOne
+	@JoinColumn(name="formule_id", referencedColumnName="id_formule")
 	private Formule formule;
 	
 	

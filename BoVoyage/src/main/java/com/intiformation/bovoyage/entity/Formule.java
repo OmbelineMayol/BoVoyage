@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity(name = "formule")
@@ -45,10 +48,20 @@ public class Formule implements Serializable {
 	@Column(name = "PlacesDispo")
 	private int placesDispo;
 
+	@Column(name = "Disponibilite")
+	private int disponibilite;
+
 	// Association UML en Java
 
-	List<Hotel> hotelsFormule;
-	Voiture voitureFormule;
+	@OneToMany(mappedBy = "formule")
+	private List<Reservation> listeReservation;
+
+	@OneToMany(mappedBy="formule")
+	private List<Hotel> hotelsFormule;
+	
+	@OneToOne
+	@JoinColumn(name="voiture_id", referencedColumnName="id_voiture")
+	private Voiture voitureFormule;
 
 	/* _____________________ Constructeurs ____________________ */
 
@@ -56,7 +69,7 @@ public class Formule implements Serializable {
 	}
 
 	public Formule(String dateDebut, String dateFin, String continent, String pays, String prix, String hebergement,
-			double numeroAvion, int placesDispo) {
+			double numeroAvion, int placesDispo, int disponibilite) {
 		super();
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
@@ -66,23 +79,9 @@ public class Formule implements Serializable {
 		this.hebergement = hebergement;
 		this.numeroAvion = numeroAvion;
 		this.placesDispo = placesDispo;
+		this.disponibilite = disponibilite;
 	}
 
-	public Formule(int idFormule, String dateDebut, String dateFin, String continent, String pays, String prix,
-			String hebergement, double numeroAvion, int placesDispo) {
-		super();
-		this.idFormule = idFormule;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-		this.continent = continent;
-		this.pays = pays;
-		this.prix = prix;
-		this.hebergement = hebergement;
-		this.numeroAvion = numeroAvion;
-		this.placesDispo = placesDispo;
-	}
-
-	/* _____________________ Méthodes ____________________ */
 
 	/* _____________________ Getter & Setter ____________________ */
 
@@ -172,6 +171,22 @@ public class Formule implements Serializable {
 
 	public void setVoitureFormule(Voiture voitureFormule) {
 		this.voitureFormule = voitureFormule;
+	}
+
+	public int getDisponibilite() {
+		return disponibilite;
+	}
+
+	public void setDisponibilite(int disponibilite) {
+		this.disponibilite = disponibilite;
+	}
+
+	public List<Reservation> getListeReservation() {
+		return listeReservation;
+	}
+
+	public void setListeReservation(List<Reservation> listeReservation) {
+		this.listeReservation = listeReservation;
 	}
 
 }
