@@ -1,7 +1,5 @@
 package com.intiformation.bovoyage.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity(name = "banque")
 @Table(name = "banques")
-public class Banque implements Serializable {
+public class Banque {
 
 	/* ___________________ Attributs ________________________ */
 
@@ -20,32 +18,23 @@ public class Banque implements Serializable {
 	@Column(name = "id_banque")
 	private int idBanque;
 	@Column(name = "nom")
-	private String NomBanque;
+	private String nomBanque;
 	@Column(name = "numeroCB")
-	private double NumeroCB;
+	private double numeroCB;
 	@Column(name = "solde")
 	private double solde;
 
 	/* ___________________ Constructeurs ________________________ */
-
 	public Banque() {
+		super();
 	}
 
 	public Banque(String nomBanque, double numeroCB, double solde) {
-		NomBanque = nomBanque;
-		numeroCB = numeroCB;
-		this.solde = solde;
-	}
-
-	public Banque(int idBanque, String nomBanque, double numeroCB, double solde) {
 		super();
-		this.idBanque = idBanque;
-		NomBanque = nomBanque;
-		numeroCB = numeroCB;
+		this.nomBanque = nomBanque;
+		this.numeroCB = numeroCB;
 		this.solde = solde;
 	}
-
-	/* ___________________ Méthodes ________________________ */
 
 	/* ___________________ Getter & Setter ________________________ */
 
@@ -58,19 +47,19 @@ public class Banque implements Serializable {
 	}
 
 	public String getNomBanque() {
-		return NomBanque;
+		return nomBanque;
 	}
 
 	public void setNomBanque(String nomBanque) {
-		NomBanque = nomBanque;
+		this.nomBanque = nomBanque;
 	}
 
 	public double getNumeroCB() {
-		return NumeroCB;
+		return numeroCB;
 	}
 
 	public void setNumeroCB(double numeroCB) {
-		NumeroCB = numeroCB;
+		this.numeroCB = numeroCB;
 	}
 
 	public double getSolde() {
