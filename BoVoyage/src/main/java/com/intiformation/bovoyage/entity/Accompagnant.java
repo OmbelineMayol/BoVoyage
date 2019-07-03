@@ -9,6 +9,7 @@ public class Accompagnant extends Personne{
 	
 	/* -------- ASSOCIATIONS UML -----------------*/
 	
+	
 	@ManyToOne
 	@JoinColumn(name="client_id", referencedColumnName="id_client")
 	private Client client;
