@@ -54,13 +54,6 @@ public class Client extends Personne{
 		this.actived = actived;
 	}
 
-	public Client(String idClient, String password, double numCB, int actived) {
-		super();
-		this.idClient = idClient;
-		this.password = password;
-		this.numCB = numCB;
-		this.actived = actived;
-	}
 
 	// Déclaration getters et setters
 	public String getIdClient() {
