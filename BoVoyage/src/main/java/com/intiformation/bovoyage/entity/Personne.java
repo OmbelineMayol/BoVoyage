@@ -124,8 +124,4 @@ public abstract class Personne {
 	}
 	
 	
-	
-	
-	
-	
 }
