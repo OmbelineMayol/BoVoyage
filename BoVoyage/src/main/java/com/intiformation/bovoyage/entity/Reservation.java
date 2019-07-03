@@ -34,6 +34,11 @@ public class Reservation {
 	@Column(name = "nbreAccompagnant")
 	private int nbreAccompagnant;
 
+	//Transformation de l'association UML en java
+	private Formule formule;
+	private Client client;
+	
+	
 	// Déclaration des constructeurs
 	public Reservation() {
 		super();
@@ -106,6 +111,22 @@ public class Reservation {
 
 	public void setNbreAccompagnant(int nbreAccompagnant) {
 		this.nbreAccompagnant = nbreAccompagnant;
+	}
+
+	public Formule getFormule() {
+		return formule;
+	}
+
+	public void setFormule(Formule formule) {
+		this.formule = formule;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 }// endclass
