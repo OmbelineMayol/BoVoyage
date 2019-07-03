@@ -1,6 +1,5 @@
 package com.intiformation.bovoyage.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity(name = "formule")
 @Table(name = "formules")
-public class Formule implements Serializable {
+public class Formule {
 
 	/* _____________________ Déclaration des attributs ____________________ */
 
