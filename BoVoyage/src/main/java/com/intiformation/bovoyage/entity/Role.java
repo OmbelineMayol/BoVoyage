@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.xml.ws.config.metro.parser.jsr109.String;
+
 @Entity(name = "role")
 @Table(name= "roles")
 public class Role {

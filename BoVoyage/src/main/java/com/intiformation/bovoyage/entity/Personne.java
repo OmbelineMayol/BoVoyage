@@ -11,6 +11,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import com.sun.xml.ws.config.metro.parser.jsr109.String;
+
 @Entity(name="personne")
 @Table(name="personnes")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
