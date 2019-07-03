@@ -28,6 +28,11 @@ public class Reservation {
 	@Column(name = "nbreAccompagnant")
 	private int nbreAccompagnant;
 
+	//Transformation de l'association UML en java
+	private Formule formule;
+	private Client client;
+	
+	
 	// Déclaration des constructeurs
 	public Reservation() {
 		super();
