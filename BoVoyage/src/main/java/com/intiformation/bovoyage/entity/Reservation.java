@@ -13,18 +13,24 @@ public class Reservation {
 	// Déclaration des attributs
 	@Id
 	@GeneratedValue()
-	@Column(name = "idResa")
+	@Column(name = "id_resa")
 	private int idResa;
+	
 	@Column(name = "nDossier")
 	private double nDossier;
+	
 	@Column(name = "prixTotal")
 	private double prixTotal;
+	
 	@Column(name = "nbrePlace")
 	private int nbrePlace;
+	
 	@Column(name = "assuranceA")
 	private int assuranceA;
+	
 	@Column(name = "etat")
 	private String etat;
+	
 	@Column(name = "nbreAccompagnant")
 	private int nbreAccompagnant;
 

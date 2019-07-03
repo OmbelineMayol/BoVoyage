@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity(name= "client")
@@ -32,7 +33,7 @@ public class Client extends Personne{
 	private int actived;
 
 	//Transformation de l'association UML en java
-	
+	@OneToOne(mappedBy="client")
 	private Role role;
 	
 	@OneToMany(mappedBy="client")
@@ -106,5 +107,6 @@ public class Client extends Personne{
 	public void setListeAccompagnants(List<Accompagnant> listeAccompagnants) {
 		this.listeAccompagnants = listeAccompagnants;
 	}
+	
 
 }
