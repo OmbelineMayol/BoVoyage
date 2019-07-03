@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 @Entity(name= "client")
 @Table(name= "clients")
-@DiscriminatorValue("Client")
 public class Client extends Personne{
 
 	// Déclaration des attributs

@@ -15,8 +15,7 @@ import com.sun.xml.ws.config.metro.parser.jsr109.String;
 
 @Entity(name="personne")
 @Table(name="personnes")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Type_Personne", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Personne {
 	
 	//Déclaration des attributs
@@ -24,21 +23,27 @@ public abstract class Personne {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_personne")
 	private int idPersonne;
+	
 	@Column(name = "civilite")
 	private int civilite;
+	
 	@Column(name = "nom")
 	private String nom;
+	
 	@Column(name = "prenom")
 	private String prenom;
+	
 	@Column(name = "age")
 	private int age;
+	
 	@Column(name = "adresse")
 	private String adresse;
+	
 	@Column(name = "telephone")
 	private String telephone;
+	
 	@Column(name = "email")
 	private String email;
-	
 	
 	
 	//Déclaration des constructeurs
@@ -68,6 +73,7 @@ public abstract class Personne {
 		this.email = email;
 	}
 	//Déclaration des getters et setters
+	
 	public int getIdPersonne() {
 		return idPersonne;
 	}
