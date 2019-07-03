@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Banque implements Serializable{
 	
 	
-	/* ___________________ Attributs Ici ________________________*/
+	/* ___________________ Attributs ________________________*/
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
