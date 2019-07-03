@@ -41,12 +41,6 @@ public class Voiture {
 		this.loueur = loueur;
 	}
 
-	public Voiture(int idVoiture, String categorie, String loueur) {
-		super();
-		this.idVoiture = idVoiture;
-		this.categorie = categorie;
-		this.loueur = loueur;
-	}
 
 	// Déclaration des getters et setters
 	public int getIdVoiture() {
