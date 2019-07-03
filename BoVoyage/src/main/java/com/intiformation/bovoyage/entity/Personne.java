@@ -20,28 +20,28 @@ public abstract class Personne {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_personne")
-	private int idPersonne;
+	protected int idPersonne;
 	
 	@Column(name = "civilite")
-	private int civilite;
+	protected int civilite;
 	
 	@Column(name = "nom")
-	private String nom;
+	protected String nom;
 	
 	@Column(name = "prenom")
-	private String prenom;
+	protected String prenom;
 	
 	@Column(name = "age")
-	private int age;
+	protected int age;
 	
 	@Column(name = "adresse")
-	private String adresse;
+	protected String adresse;
 	
 	@Column(name = "telephone")
-	private String telephone;
+	protected String telephone;
 	
 	@Column(name = "email")
-	private String email;
+	protected String email;
 	
 	
 	//Déclaration des constructeurs
