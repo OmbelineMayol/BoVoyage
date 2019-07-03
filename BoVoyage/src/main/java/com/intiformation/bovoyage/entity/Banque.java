@@ -9,13 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name="banque")
-@Table(name="banques")
-public class Banque implements Serializable{
-	
-	
-	/* ___________________ Attributs ________________________*/
-	
+@Entity(name = "banque")
+@Table(name = "banques")
+public class Banque implements Serializable {
+
+	/* ___________________ Attributs ________________________ */
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_banque")
@@ -23,88 +22,63 @@ public class Banque implements Serializable{
 	@Column(name = "nom")
 	private String NomBanque;
 	@Column(name = "numeroCB")
-	private double NumeroBanque;
+	private double NumeroCB;
 	@Column(name = "solde")
 	private double solde;
-	
-	/* ___________________ Constructeurs ________________________*/
-	
+
+	/* ___________________ Constructeurs ________________________ */
+
 	public Banque() {
 	}
 
-	public Banque(String nomBanque, double numeroBanque, double solde) {
+	public Banque(String nomBanque, double numeroCB, double solde) {
 		NomBanque = nomBanque;
-		NumeroBanque = numeroBanque;
+		numeroCB = numeroCB;
 		this.solde = solde;
 	}
 
-
-
-	public Banque(int idBanque, String nomBanque, double numeroBanque, double solde) {
+	public Banque(int idBanque, String nomBanque, double numeroCB, double solde) {
 		super();
 		this.idBanque = idBanque;
 		NomBanque = nomBanque;
-		NumeroBanque = numeroBanque;
+		numeroCB = numeroCB;
 		this.solde = solde;
 	}
 
-	/* ___________________ Méthodes ________________________*/
-	
-	
-	
-	
-	/* ___________________ Getter & Setter ________________________*/
+	/* ___________________ Méthodes ________________________ */
+
+	/* ___________________ Getter & Setter ________________________ */
 
 	public int getIdBanque() {
 		return idBanque;
 	}
 
-
-
 	public void setIdBanque(int idBanque) {
 		this.idBanque = idBanque;
 	}
-
-
 
 	public String getNomBanque() {
 		return NomBanque;
 	}
 
-
-
 	public void setNomBanque(String nomBanque) {
 		NomBanque = nomBanque;
 	}
 
-
-
-	public double getNumeroBanque() {
-		return NumeroBanque;
+	public double getNumeroCB() {
+		return NumeroCB;
 	}
 
-
-
-	public void setNumeroBanque(double numeroBanque) {
-		NumeroBanque = numeroBanque;
+	public void setNumeroCB(double numeroCB) {
+		NumeroCB = numeroCB;
 	}
-
-
 
 	public double getSolde() {
 		return solde;
 	}
 
-
-
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }
