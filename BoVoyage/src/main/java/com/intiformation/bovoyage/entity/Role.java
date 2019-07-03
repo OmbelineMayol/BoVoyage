@@ -23,7 +23,7 @@ public class Role {
 	private int idRole;
 	
 	@Column(name = "role")
-	private String Role;
+	private String role;
 	
 	//------------Transformation de l'association UML en java
 	@ManyToOne
@@ -33,46 +33,58 @@ public class Role {
 	@OneToOne
 	@JoinColumn(name="client_id", referencedColumnName="id_client")
 	private Client client;
+
 	
 	//------------Déclaration des constructeurs
+
 	public Role() {
 		super();
 	}
-	public Role(String role) {
+
+	public Role(String role, Agent agent, Client client) {
 		super();
-		Role = role;
+		this.role = role;
+		this.agent = agent;
+		this.client = client;
 	}
-	public Role(int idRole, String role) {
-		super();
-		this.idRole = idRole;
-		Role = role;
-	}
+
+	//------------Déclaration des Getters et Setters
 	
-	//--------------- Déclaration des getters et setters
 	public int getIdRole() {
 		return idRole;
 	}
+
 	public void setIdRole(int idRole) {
 		this.idRole = idRole;
 	}
+
 	public String getRole() {
-		return Role;
+		return role;
 	}
+
 	public void setRole(String role) {
-		Role = role;
+		this.role = role;
 	}
+
 	public Agent getAgent() {
 		return agent;
 	}
+
 	public void setAgent(Agent agent) {
 		this.agent = agent;
 	}
+
 	public Client getClient() {
 		return client;
 	}
+
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	
+	
+	
+	
 	
 	
 	
