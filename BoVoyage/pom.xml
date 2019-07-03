@@ -10,10 +10,13 @@
 	<url>http://maven.apache.org</url>
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- +++++++++++++++++++ LIBRAIRIE +++++++++++++++++++++++ -->
+	<!-- +++++++++++++++++++ Bibliothèque ++++++++++++++++++++ -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<dependencies>
+
+		<!-- //////////////// J-UNIT /////////////////////// -->
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -21,6 +24,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- //////////////// SPRING /////////////////////// -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -41,6 +45,7 @@
 
 		</dependency>
 
+		<!-- //////////////// SPRING-SECURITY /////////////////////// -->
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -61,6 +66,8 @@
 
 		</dependency>
 
+		<!-- //////////////// MY SQL /////////////////////// -->
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -68,6 +75,7 @@
 
 		</dependency>
 
+		<!-- //////////////// SERVLET & JSP /////////////////////// -->
 
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
@@ -83,24 +91,16 @@
 
 		<!-- /////////////////////// Hibernate //////////////////////////// -->
 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.2.2.Final</version>
-		</dependency>
 
-		<dependency>
-			<groupId>org.hibernate.common</groupId>
-			<artifactId>hibernate-commons-annotations</artifactId>
-			<version>5.0.1.Final</version>
-		</dependency>
-
+		<!-- jpa-metamodel-generator -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
 			<version>5.2.2.Final</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- Requis -->
 
 		<dependency>
 			<groupId>antlr</groupId>
@@ -118,6 +118,18 @@
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>5.0.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.17.Final</version>
 		</dependency>
 
 		<dependency>
@@ -150,6 +162,8 @@
 			<version>1.0.1.Final</version>
 		</dependency>
 
+		<!-- Spatial -->
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -180,8 +194,6 @@
 			<version>1.2.0</version>
 		</dependency>
 
-
-
 	</dependencies>
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -189,12 +201,62 @@
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+
 		<spring.version>4.3.15.RELEASE</spring.version>
 		<spring.security.version>4.1.3.RELEASE</spring.security.version>
 	</properties>
 
 	<build>
 		<finalName>BoVoyage</finalName>
+
+<!-- 		<pluginManagement> -->
+		
+<!-- 			<plugins> -->
+				
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-clean-plugin</artifactId> -->
+<!-- 					<version>3.1.0</version> -->
+<!-- 				</plugin> -->
+				
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-resources-plugin</artifactId> -->
+<!-- 					<version>3.0.2</version> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-compiler-plugin</artifactId> -->
+<!-- 					<version>3.8.0</version> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-surefire-plugin</artifactId> -->
+<!-- 					<version>2.22.1</version> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-jar-plugin</artifactId> -->
+<!-- 					<version>3.0.2</version> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-install-plugin</artifactId> -->
+<!-- 					<version>2.5.2</version> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-deploy-plugin</artifactId> -->
+<!-- 					<version>2.8.2</version> -->
+<!-- 				</plugin> -->
+				
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-site-plugin</artifactId> -->
+<!-- 					<version>3.7.1</version> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin> -->
+<!-- 					<artifactId>maven-project-info-reports-plugin</artifactId> -->
+<!-- 					<version>3.0.0</version> -->
+<!-- 				</plugin> -->
+<!-- 			</plugins> -->
+<!-- 		</pluginManagement> -->
+
 	</build>
 
 </project>
