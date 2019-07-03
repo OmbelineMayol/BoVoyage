@@ -1,7 +1,7 @@
 package com.intiformation.bovoyage.entity;
 
-
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,157 +11,151 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity(name = "formule")
-@Table(name = "formules") 
-public class Formule implements Serializable{
-	
-	
+@Table(name = "formules")
+public class Formule implements Serializable {
+
 	/* _____________________ Déclaration des attributs ____________________ */
-	
-		@Id
-		@GeneratedValue(strategy =  GenerationType.IDENTITY)
-		@Column(name= "id_formule")
-		private int idFormule;
-		
-		@Column(name= "DateDebut")
-		private String dateDebut;
-		
-		@Column(name= "DateFin")
-		private String dateFin;
-		
-		@Column(name= "Continent")
-		private String continent;
-		
-		@Column(name= "Pays")
-		private String pays;
-		
-		@Column(name= "Prix")
-		private String prix;
-		
-		@Column(name= "Hebergement")
-		private String hebergement;
-		
-		@Column(name= "NumeroAvion")
-		private double numeroAvion;
-		
-		@Column(name= "PlacesDispo")
-		private int placesDispo;
 
-		/* _____________________ Constructeurs ____________________ */
-		
-		public Formule() {
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_formule")
+	private int idFormule;
 
-		public Formule(String dateDebut, String dateFin, String continent, String pays, String prix, String hebergement,
-				double numeroAvion, int placesDispo) {
-			super();
-			this.dateDebut = dateDebut;
-			this.dateFin = dateFin;
-			this.continent = continent;
-			this.pays = pays;
-			this.prix = prix;
-			this.hebergement = hebergement;
-			this.numeroAvion = numeroAvion;
-			this.placesDispo = placesDispo;
-		}
+	@Column(name = "DateDebut")
+	private String dateDebut;
 
-		public Formule(int idFormule, String dateDebut, String dateFin, String continent, String pays, String prix,
-				String hebergement, double numeroAvion, int placesDispo) {
-			super();
-			this.idFormule = idFormule;
-			this.dateDebut = dateDebut;
-			this.dateFin = dateFin;
-			this.continent = continent;
-			this.pays = pays;
-			this.prix = prix;
-			this.hebergement = hebergement;
-			this.numeroAvion = numeroAvion;
-			this.placesDispo = placesDispo;
-		}
+	@Column(name = "DateFin")
+	private String dateFin;
 
+	@Column(name = "Continent")
+	private String continent;
 
-		/* _____________________ Méthodes ____________________ */
-		
-		
-		
-		/* _____________________ Getter & Setter ____________________ */
-		
-		public int getIdFormule() {
-			return idFormule;
-		}
+	@Column(name = "Pays")
+	private String pays;
 
-		public void setIdFormule(int idFormule) {
-			this.idFormule = idFormule;
-		}
+	@Column(name = "Prix")
+	private String prix;
 
-		public String getDateDebut() {
-			return dateDebut;
-		}
+	@Column(name = "Hebergement")
+	private String hebergement;
 
-		public void setDateDebut(String dateDebut) {
-			this.dateDebut = dateDebut;
-		}
+	@Column(name = "NumeroAvion")
+	private double numeroAvion;
 
-		public String getDateFin() {
-			return dateFin;
-		}
+	@Column(name = "PlacesDispo")
+	private int placesDispo;
 
-		public void setDateFin(String dateFin) {
-			this.dateFin = dateFin;
-		}
+	// Association UML en Java
 
-		public String getContinent() {
-			return continent;
-		}
+	List<Hotel> hotelsFormule;
+	Voiture voitureFormule;
 
-		public void setContinent(String continent) {
-			this.continent = continent;
-		}
+	/* _____________________ Constructeurs ____________________ */
 
-		public String getPays() {
-			return pays;
-		}
+	public Formule() {
+	}
 
-		public void setPays(String pays) {
-			this.pays = pays;
-		}
+	public Formule(String dateDebut, String dateFin, String continent, String pays, String prix, String hebergement,
+			double numeroAvion, int placesDispo) {
+		super();
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.continent = continent;
+		this.pays = pays;
+		this.prix = prix;
+		this.hebergement = hebergement;
+		this.numeroAvion = numeroAvion;
+		this.placesDispo = placesDispo;
+	}
 
-		public String getPrix() {
-			return prix;
-		}
+	public Formule(int idFormule, String dateDebut, String dateFin, String continent, String pays, String prix,
+			String hebergement, double numeroAvion, int placesDispo) {
+		super();
+		this.idFormule = idFormule;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.continent = continent;
+		this.pays = pays;
+		this.prix = prix;
+		this.hebergement = hebergement;
+		this.numeroAvion = numeroAvion;
+		this.placesDispo = placesDispo;
+	}
 
-		public void setPrix(String prix) {
-			this.prix = prix;
-		}
+	/* _____________________ Méthodes ____________________ */
 
-		public String getHebergement() {
-			return hebergement;
-		}
+	/* _____________________ Getter & Setter ____________________ */
 
-		public void setHebergement(String hebergement) {
-			this.hebergement = hebergement;
-		}
+	public int getIdFormule() {
+		return idFormule;
+	}
 
-		public double getNumeroAvion() {
-			return numeroAvion;
-		}
+	public void setIdFormule(int idFormule) {
+		this.idFormule = idFormule;
+	}
 
-		public void setNumeroAvion(double numeroAvion) {
-			this.numeroAvion = numeroAvion;
-		}
+	public String getDateDebut() {
+		return dateDebut;
+	}
 
-		public int getPlacesDispo() {
-			return placesDispo;
-		}
+	public void setDateDebut(String dateDebut) {
+		this.dateDebut = dateDebut;
+	}
 
-		public void setPlacesDispo(int placesDispo) {
-			this.placesDispo = placesDispo;
-		}
-		
+	public String getDateFin() {
+		return dateFin;
+	}
 
-		
-		
-	
-	
-	
+	public void setDateFin(String dateFin) {
+		this.dateFin = dateFin;
+	}
+
+	public String getContinent() {
+		return continent;
+	}
+
+	public void setContinent(String continent) {
+		this.continent = continent;
+	}
+
+	public String getPays() {
+		return pays;
+	}
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+
+	public String getPrix() {
+		return prix;
+	}
+
+	public void setPrix(String prix) {
+		this.prix = prix;
+	}
+
+	public String getHebergement() {
+		return hebergement;
+	}
+
+	public void setHebergement(String hebergement) {
+		this.hebergement = hebergement;
+	}
+
+	public double getNumeroAvion() {
+		return numeroAvion;
+	}
+
+	public void setNumeroAvion(double numeroAvion) {
+		this.numeroAvion = numeroAvion;
+	}
+
+	public int getPlacesDispo() {
+		return placesDispo;
+	}
+
+	public void setPlacesDispo(int placesDispo) {
+		this.placesDispo = placesDispo;
+	}
 
 }
