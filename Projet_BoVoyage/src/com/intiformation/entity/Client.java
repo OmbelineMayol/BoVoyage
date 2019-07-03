@@ -1,5 +1,7 @@
 package com.intiformation.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -31,7 +33,7 @@ public class Client extends Personne{
 	//Transformation de l'association UML en java
 	
 	private Role role;
-	
+	private List<Accompagnant> listeAccompagnants; 
 	
 	// Déclaration des constructeurs
 	public Client() {
@@ -84,6 +86,22 @@ public class Client extends Personne{
 
 	public void setActived(int actived) {
 		this.actived = actived;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<Accompagnant> getListeAccompagnants() {
+		return listeAccompagnants;
+	}
+
+	public void setListeAccompagnants(List<Accompagnant> listeAccompagnants) {
+		this.listeAccompagnants = listeAccompagnants;
 	}
 
 }
