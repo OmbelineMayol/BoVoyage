@@ -45,13 +45,7 @@ public class Agent {
 		this.password = password;
 		this.actived = actived;
 	}
-	public Agent(int idAgent, String username, String password, int actived) {
-		super();
-		this.idAgent = idAgent;
-		this.username = username;
-		this.password = password;
-		this.actived = actived;
-	}
+	
 	
 	//Déclaration des getters et setters
 	
