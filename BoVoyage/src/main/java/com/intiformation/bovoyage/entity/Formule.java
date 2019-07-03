@@ -158,4 +158,20 @@ public class Formule implements Serializable {
 		this.placesDispo = placesDispo;
 	}
 
+	public List<Hotel> getHotelsFormule() {
+		return hotelsFormule;
+	}
+
+	public void setHotelsFormule(List<Hotel> hotelsFormule) {
+		this.hotelsFormule = hotelsFormule;
+	}
+
+	public Voiture getVoitureFormule() {
+		return voitureFormule;
+	}
+
+	public void setVoitureFormule(Voiture voitureFormule) {
+		this.voitureFormule = voitureFormule;
+	}
+
 }

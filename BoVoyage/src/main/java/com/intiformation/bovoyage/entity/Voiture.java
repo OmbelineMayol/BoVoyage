@@ -71,4 +71,12 @@ public class Voiture {
 		this.loueur = loueur;
 	}
 
+	public Formule getFormule() {
+		return formule;
+	}
+
+	public void setFormule(Formule formule) {
+		this.formule = formule;
+	}
+
 }

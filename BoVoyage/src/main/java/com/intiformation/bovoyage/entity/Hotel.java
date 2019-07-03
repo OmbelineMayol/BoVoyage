@@ -34,6 +34,7 @@ public class Hotel {
 	
 	
 	/* --------------- DECLARATION DES ASSOCIATIONS--------------------*/
+	private Formule formule;
 	
 	
 	/* ----------- DECLARATION DES CONSTRUCTEURS  ---------------------*/
@@ -99,6 +100,14 @@ public class Hotel {
 
 	public void setDateOut(String dateOut) {
 		this.dateOut = dateOut;
+	}
+
+	public Formule getFormule() {
+		return formule;
+	}
+
+	public void setFormule(Formule formule) {
+		this.formule = formule;
 	}
 	
 	
