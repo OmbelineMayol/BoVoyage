@@ -68,8 +68,7 @@
 			<list>
 				<value>com.intiformation.bovoyage.entity.Banque</value>	
 				<value>com.intiformation.bovoyage.entity.Client</value>
-				<value>com.intiformation.bovoyage.entity.Agent</value>
-				<value>com.intiformation.bovoyage.entity.Personne</value>
+				<value>com.intiformation.bovoyage.entity.Agent</value>			
 				<value>com.intiformation.bovoyage.entity.Accompagnant</value>
 				<value>com.intiformation.bovoyage.entity.Role</value>
 				<value>com.intiformation.bovoyage.entity.Reservation</value>
