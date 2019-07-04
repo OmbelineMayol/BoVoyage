@@ -25,13 +25,13 @@ public class VoitureDaoImpl implements IVoitureDao {
 		this.sessionFactory = sessionFactory;
 	}
 	//méthodes
-	@Transactional
+	@Transactional(readOnly = true)
 	public Voiture getByIdVoitureDao(int pIdVoiture) {
 
 		return (Voiture) sessionFactory.getCurrentSession().get(Voiture.class, pIdVoiture);
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Voiture> getAllVoitures() {
 		List<Voiture> listeVoitureOut = sessionFactory.getCurrentSession().createQuery("FROM voiture").list();
 		return listeVoitureOut;

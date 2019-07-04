@@ -31,7 +31,7 @@ public class AccompagantDaoImpl implements IAccompagnantDao {
 		sessionFactory.getCurrentSession().save(pAccompagnant);
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public Accompagnant getByIdAccompagnantDao(int pIdAccompagnant) {
 		return (Accompagnant)sessionFactory.getCurrentSession().get(Accompagnant.class, pIdAccompagnant);
 	}
@@ -48,7 +48,7 @@ public class AccompagantDaoImpl implements IAccompagnantDao {
 		sessionFactory.getCurrentSession().delete(accompagnant);
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Accompagnant> getAllAccompagnant() {
 		List<Accompagnant> listeAccompagnantOut = sessionFactory.getCurrentSession().createQuery("FROM accompagnant ac").list();
 		return listeAccompagnantOut;

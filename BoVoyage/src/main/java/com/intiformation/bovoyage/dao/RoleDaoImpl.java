@@ -29,7 +29,7 @@ public class RoleDaoImpl implements IRoleDao {
 		// récupération de la session courante
 		sessionFactory.getCurrentSession().save(pRole);
 	}
-	@Transactional
+	@Transactional(readOnly = true)
 	public Role getByIdRoleDao(int pIdRole) {
 		return (Role) sessionFactory.getCurrentSession().get(Role.class, pIdRole);
 	}
@@ -44,7 +44,7 @@ public class RoleDaoImpl implements IRoleDao {
 		sessionFactory.getCurrentSession().delete(role);
 
 	}
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Role> getAllRoles() {
 		List<Role> listeRoleOut = sessionFactory.getCurrentSession().createQuery("FROM role").list();
 		return listeRoleOut;

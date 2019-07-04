@@ -31,7 +31,7 @@ public class ReservationDaoImpl implements IReservationDao {
 
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public Reservation getByIdReservationDao(int pIdReservation) {
 		
 		return (Reservation) sessionFactory.getCurrentSession().get(Reservation.class, pIdReservation);
@@ -50,7 +50,7 @@ public class ReservationDaoImpl implements IReservationDao {
 
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Reservation> getAllReservationsDao() {
 		List<Reservation> listeReservationsOut = sessionFactory.getCurrentSession().createQuery("FROM reservation resa").list();
 		return listeReservationsOut;

@@ -30,7 +30,7 @@ public class ClientDaoImpl implements IClientDao {
 		sessionFactory.getCurrentSession().save(pClient);
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public Client getByIdClientDao(int pIdClient) {
 		return (Client) sessionFactory.getCurrentSession().get(Client.class, pIdClient);
 	}
@@ -46,7 +46,7 @@ public class ClientDaoImpl implements IClientDao {
 		sessionFactory.getCurrentSession().delete(client);
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Client> getAllClients() {
 		List<Client> listeClientOut = sessionFactory.getCurrentSession().createQuery("FROM client cl").list();
 		return listeClientOut;
