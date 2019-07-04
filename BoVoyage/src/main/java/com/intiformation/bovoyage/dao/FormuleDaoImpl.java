@@ -27,12 +27,19 @@ public class FormuleDaoImpl implements IFormuleDao {
 
 	/* --------------- REDEFINITION DES METHODE --------------------- */
 
+	/**
+	 * Récupère l'ensemble des formules
+	 */
+	
 	@Transactional(readOnly = true)
 	public List<Formule> getAllFormuleDao() {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createQuery("FROM formule").list();
 	}
 
+	/**
+	 * récupère l'ensemble des formules en fonction du Pays
+	 */
 	@Transactional(readOnly = true)
 	public List<Formule> getFormuleByPaysDao(String nomPays) {
 		// 1. Recuperation de la session
@@ -56,6 +63,10 @@ public class FormuleDaoImpl implements IFormuleDao {
 		return listOut;
 	}
 
+	/**
+	 * Récupère les formules en fonction du nom des continents
+	 */
+	
 	@Transactional(readOnly = true)
 	public List<Formule> getFormuleByContinentDao(String nomContinent) {
 
@@ -80,6 +91,9 @@ public class FormuleDaoImpl implements IFormuleDao {
 		return listOut;
 	}
 
+	/**
+	 * Récupère un formule par son id
+	 */
 	@Transactional(readOnly = true)
 	public Formule getFormuleById(int idFormule) {
 
