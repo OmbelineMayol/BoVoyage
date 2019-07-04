@@ -32,7 +32,6 @@ public class HotelServiceImpl implements IHotelService{
 		return hotelDao.getByIdHotelDao(idHotel);
 	}
 	
-
 	/**
 	 * Recupère tous les hotels
 	 */
