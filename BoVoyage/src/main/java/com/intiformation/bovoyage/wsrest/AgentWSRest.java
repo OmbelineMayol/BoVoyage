@@ -41,8 +41,8 @@ public class AgentWSRest {
 	 * @param idAgentIn
 	 * @return
 	 */
-	@RequestMapping(value = "/agents/getById/{id}", method = RequestMethod.GET, produces={"application/json"} )
-	public Agent getAgentById(@PathVariable int idAgentIn) {
+	@RequestMapping(value = "/agents/getById/{idAgent}", method = RequestMethod.GET, produces={"application/json"} )
+	public Agent getAgentById(@PathVariable("idAgent") int idAgentIn) {
 		return agentService.getByIdAgentService(idAgentIn);
 	}
 
@@ -69,8 +69,8 @@ public class AgentWSRest {
 	 * Suppression d'un agent
 	 * @param idAgentIn
 	 */
-	@RequestMapping(value = "/agents/delete/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-	public void deleteAgent(@PathVariable("id") int idAgentIn) {
+	@RequestMapping(value = "/agents/delete/{idAgent}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	public void deleteAgent(@PathVariable("idAgent") int idAgentIn) {
 		agentService.deleteAgentService(idAgentIn);
 
 	}
