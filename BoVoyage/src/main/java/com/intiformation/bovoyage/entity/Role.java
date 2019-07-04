@@ -9,11 +9,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 
 @Entity(name = "role")
 @Table(name= "roles")
+@XmlRootElement
 public class Role {
 	
 	//-----------Déclaration des attributs

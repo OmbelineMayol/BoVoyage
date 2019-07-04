@@ -10,11 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 
 @Entity(name= "client")
 @Table(name= "clients")
+@XmlRootElement
 public class Client {
 
 	// Déclaration des attributs
