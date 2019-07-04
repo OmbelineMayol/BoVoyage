@@ -22,24 +22,24 @@ public class ClientDaoImpl implements IClientDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	
-	// méthodes 
+
+	// méthodes
 	@Transactional
 	public void addClientDao(Client pClient) {
-		//récupération de la session courante
-		sessionFactory.getCurrentSession().save(pClient); 
+		// récupération de la session courante
+		sessionFactory.getCurrentSession().save(pClient);
 	}
-	
+
 	@Transactional
 	public Client getByIdClientDao(int pIdClient) {
 		return (Client) sessionFactory.getCurrentSession().get(Client.class, pIdClient);
 	}
-	
+
 	@Transactional
 	public void updateClientDao(Client pClient) {
 		sessionFactory.getCurrentSession().update(pClient);
 	}
-	
+
 	@Transactional
 	public void deleteClientDao(int pIdClient) {
 		Client client = (Client) sessionFactory.getCurrentSession().get(Client.class, pIdClient);
@@ -48,8 +48,8 @@ public class ClientDaoImpl implements IClientDao {
 
 	@Transactional
 	public List<Client> getAllClients() {
-		 List<Client> listeClientOut = sessionFactory.getCurrentSession().createQuery("FROM client cl").list();
-		 return listeClientOut;
+		List<Client> listeClientOut = sessionFactory.getCurrentSession().createQuery("FROM client cl").list();
+		return listeClientOut;
 	}
 
 }

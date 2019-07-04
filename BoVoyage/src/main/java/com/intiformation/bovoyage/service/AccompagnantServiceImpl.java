@@ -3,10 +3,12 @@ package com.intiformation.bovoyage.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.intiformation.bovoyage.dao.IAccompagnantDao;
 import com.intiformation.bovoyage.entity.Accompagnant;
 
+@Service
 public class AccompagnantServiceImpl implements IAccompagnantService {
 
 	// Déclaration du DAO
@@ -20,6 +22,7 @@ public class AccompagnantServiceImpl implements IAccompagnantService {
 		this.accompagnantDao = accompagnantDao;
 	}
 
+	// redéfinition des méthodes
 	public void addAccompagnantService(Accompagnant pAccompagnant) {
 
 	}
