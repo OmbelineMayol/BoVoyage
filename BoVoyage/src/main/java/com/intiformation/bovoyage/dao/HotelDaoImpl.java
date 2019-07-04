@@ -65,6 +65,7 @@ public class HotelDaoImpl implements IHotelDao {
 	/**
 	 * Methode qui permet de recupérer les hotels par l'id de la formule
 	 */
+	@Transactional(readOnly=true)
 	public List<Hotel> getHotelByIdFormule(int idFormule) {
 		// 1. Recuperation de la session
 		Session session = sessionFactory.getCurrentSession();
