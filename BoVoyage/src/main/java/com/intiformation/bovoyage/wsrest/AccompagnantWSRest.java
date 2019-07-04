@@ -46,8 +46,8 @@ public class AccompagnantWSRest {
 	 * @param idAccompagnantIn
 	 * @return
 	 */
-	@RequestMapping(value = "/accompagnants/getById/{idAccompagnantIn}", method = RequestMethod.GET, produces={"application/json"} )
-	public Accompagnant getAccompagnantById(@PathVariable int idAccompagnantIn) {
+	@RequestMapping(value = "/accompagnants/getById/{idAccompagnant}", method = RequestMethod.GET, produces={"application/json"} )
+	public Accompagnant getAccompagnantById(@PathVariable("idAccompagnant") int idAccompagnantIn) {
 		return accompagnantService.getByIdAccompagnantService(idAccompagnantIn);
 	}
 
@@ -74,8 +74,8 @@ public class AccompagnantWSRest {
 	 * Suppression d'un accompagnant
 	 * @param idAccompagnantsIn
 	 */
-	@RequestMapping(value = "/accompagnants/delete/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-	public void deleteAccompagnant(@PathVariable("id") int idAccompagnantIn) {
+	@RequestMapping(value = "/accompagnants/delete/{idAccompagnant}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	public void deleteAccompagnant(@PathVariable("idAccompagnant") int idAccompagnantIn) {
 		accompagnantService.deleteAccompagnantService(idAccompagnantIn);
 
 	}

@@ -15,28 +15,33 @@ import com.intiformation.bovoyage.service.IAgentService;
 @RestController
 public class AgentWSRest {
 	
-	/**
-	 * Liaison à la couche Service
-	 */
+	/*--------- ASSOCIATION AVEC LA COUCHE SERVICE -------------- */
+	
 	@Autowired
 	IAgentService agentService;
 
-	/**
-	 * Liste des agents
-	 * @return
-	 */
-	@RequestMapping(value = "/agents", method = RequestMethod.GET, headers = "Accept=application/json")
+	// Setter pour l'injection Srping
+	
+	public void setAgentService(IAgentService agentService) {
+		this.agentService = agentService;
+	}
+	
+	/*------------------------- METHODE ------------------------ */
+	
+	@RequestMapping(value = "/agents/getAll", method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<Agent> getAllAgents() {
 		List<Agent> listeAgents = agentService.getAllAgentService();
 		return listeAgents;
 	}
+
+	
 
 	/**
 	 * Selection d'un agent
 	 * @param idAgentIn
 	 * @return
 	 */
-	@RequestMapping(value = "/agents/{id}", method = RequestMethod.GET, produces={"application/json"} )
+	@RequestMapping(value = "/agents/getById/{id}", method = RequestMethod.GET, produces={"application/json"} )
 	public Agent getAgentById(@PathVariable int idAgentIn) {
 		return agentService.getByIdAgentService(idAgentIn);
 	}
@@ -45,7 +50,7 @@ public class AgentWSRest {
 	 * Ajout d'un agent
 	 * @param agentIn
 	 */
-	@RequestMapping(value = "/agents", method = RequestMethod.POST, produces= "application/json", consumes="application/json")
+	@RequestMapping(value = "/agents/add", method = RequestMethod.POST, produces= "application/json", consumes="application/json")
 	public void addAgent(@RequestBody Agent agentIn) {
 		agentService.addAgentService(agentIn);
 	}
@@ -54,7 +59,7 @@ public class AgentWSRest {
 	 * Modification d'un agent
 	 * @param agentIn
 	 */
-	@RequestMapping(value = "/agents", method = RequestMethod.PUT, produces= "application/json",consumes="application/json")
+	@RequestMapping(value = "/agents/update", method = RequestMethod.PUT, produces= "application/json",consumes="application/json")
 	public void updateAgent(@RequestBody Agent agentIn) {
 		agentService.updateAgentService(agentIn);;
 
@@ -64,7 +69,7 @@ public class AgentWSRest {
 	 * Suppression d'un agent
 	 * @param idAgentIn
 	 */
-	@RequestMapping(value = "/agents/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	@RequestMapping(value = "/agents/delete/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deleteAgent(@PathVariable("id") int idAgentIn) {
 		agentService.deleteAgentService(idAgentIn);
 
