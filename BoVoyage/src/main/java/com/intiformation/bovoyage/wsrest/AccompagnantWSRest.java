@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.bovoyage.entity.Accompagnant;
+import com.intiformation.bovoyage.entity.Client;
 import com.intiformation.bovoyage.service.IAccompagnantService;
 
 
@@ -56,7 +57,9 @@ public class AccompagnantWSRest {
 	 * @param accompagnantIn
 	 */
 	@RequestMapping(value = "/accompagnants/add", method = RequestMethod.POST, produces= "application/json", consumes="application/json")
-	public void addAccompagnant(@RequestBody Accompagnant accompagnantIn) {
+	public void addAccompagnant(@RequestBody Accompagnant accompagnantIn, Client clientIn) {
+		
+		accompagnantIn.setClient(clientIn);
 		accompagnantService.addAccompagnantService(accompagnantIn);
 	}
 
