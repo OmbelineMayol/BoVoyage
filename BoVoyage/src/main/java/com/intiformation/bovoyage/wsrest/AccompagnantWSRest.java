@@ -7,36 +7,46 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.bovoyage.entity.Accompagnant;
 import com.intiformation.bovoyage.service.IAccompagnantService;
 
 
-
+@RestController
 public class AccompagnantWSRest {
 	
-	/**
-	 * Liaison à la couche Service
-	 */
+	/*--------- ASSOCIATION AVEC LA COUCHE SERVICE -------------- */
+	
 	@Autowired
 	IAccompagnantService accompagnantService;
+	
+	// Setter pour l'injection Sring
+	
+	public void setAccompagnantService(IAccompagnantService accompagnantService) {
+		this.accompagnantService = accompagnantService;
+	}
+	
+
+	/*------------------------- METHODE ------------------------ */
 
 	/**
 	 * Liste des accompagnants
 	 * @return
 	 */
-	@RequestMapping(value = "/accompagnants", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/accompagnants/getAll", method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<Accompagnant> getAllAccompagnants() {
 		List<Accompagnant> listeAccompagnants = accompagnantService.getAllAccompagnant();
 		return listeAccompagnants;
 	}
 
+	
 	/**
 	 * Selection d'un accompagnant
 	 * @param idAccompagnantIn
 	 * @return
 	 */
-	@RequestMapping(value = "/accompagnants/{idAccompagnantIn}", method = RequestMethod.GET, produces={"application/json"} )
+	@RequestMapping(value = "/accompagnants/getById/{idAccompagnantIn}", method = RequestMethod.GET, produces={"application/json"} )
 	public Accompagnant getAccompagnantById(@PathVariable int idAccompagnantIn) {
 		return accompagnantService.getByIdAccompagnantService(idAccompagnantIn);
 	}
@@ -45,7 +55,7 @@ public class AccompagnantWSRest {
 	 * Ajout d'un accompagnant
 	 * @param accompagnantIn
 	 */
-	@RequestMapping(value = "/accompagnants", method = RequestMethod.POST, produces= "application/json", consumes="application/json")
+	@RequestMapping(value = "/accompagnants/add", method = RequestMethod.POST, produces= "application/json", consumes="application/json")
 	public void addAccompagnant(@RequestBody Accompagnant accompagnantIn) {
 		accompagnantService.addAccompagnantService(accompagnantIn);
 	}
@@ -54,7 +64,7 @@ public class AccompagnantWSRest {
 	 * Modification d'un accompagnant
 	 * @param accompagnantIn
 	 */
-	@RequestMapping(value = "/accompagnants", method = RequestMethod.PUT, produces= "application/json",consumes="application/json")
+	@RequestMapping(value = "/accompagnants/update", method = RequestMethod.PUT, produces= "application/json",consumes="application/json")
 	public void updateClient(@RequestBody Accompagnant accompagnantIn) {
 		accompagnantService.updateAccompagnantService(accompagnantIn);
 
@@ -64,7 +74,7 @@ public class AccompagnantWSRest {
 	 * Suppression d'un accompagnant
 	 * @param idAccompagnantsIn
 	 */
-	@RequestMapping(value = "/accompagnants/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	@RequestMapping(value = "/accompagnants/delete/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deleteAccompagnant(@PathVariable("id") int idAccompagnantIn) {
 		accompagnantService.deleteAccompagnantService(idAccompagnantIn);
 
