@@ -11,9 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity(name = "formule")
 @Table(name = "formules")
+@XmlRootElement
 public class Formule {
 
 	/* _____________________ Déclaration des attributs ____________________ */

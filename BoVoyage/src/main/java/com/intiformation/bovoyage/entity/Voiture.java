@@ -7,11 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 
 @Entity(name = "voiture")
 @Table(name = "voitures")
+@XmlRootElement
 public class Voiture {
 
 	// Déclaration des attributs

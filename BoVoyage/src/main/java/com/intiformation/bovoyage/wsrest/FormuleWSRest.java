@@ -3,12 +3,14 @@ package com.intiformation.bovoyage.wsrest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.bovoyage.entity.Formule;
 import com.intiformation.bovoyage.service.IFormuleService;
+
 
 @RestController
 public class FormuleWSRest {
@@ -30,7 +32,7 @@ public class FormuleWSRest {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/formules/getAll", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/formules/getAll", method = RequestMethod.GET, produces="application/json")
 	public List<Formule> getAllFormules() {
 		return formuleService.getAllFormuleService();
 	}
@@ -41,8 +43,8 @@ public class FormuleWSRest {
 	 * @param nomPays
 	 * @return
 	 */
-	@RequestMapping(value = "/formules/getByPays", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<Formule> getFormuleByPaysString(String nomPays) {
+	@RequestMapping(value = "/formules/getByPays/{pnomPays}", method = RequestMethod.GET, produces="application/json")
+	public List<Formule> getFormuleByPaysString(@PathVariable("pnomPays") String nomPays) {
 		return formuleService.getFormuleByPaysService(nomPays);
 	}
 
@@ -52,8 +54,8 @@ public class FormuleWSRest {
 	 * @param nomContinent
 	 * @return
 	 */
-	@RequestMapping(value = "/formules/getByContinent", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<Formule> getFormuleByContinent(String nomContinent) {
+	@RequestMapping(value = "/formules/getByContinent/{pnomContinent}", method = RequestMethod.GET, produces="application/json")
+	public List<Formule> getFormuleByContinent(@PathVariable("pnomContinent")String nomContinent) {
 		return formuleService.getFormuleByContinentService(nomContinent);
 	}
 

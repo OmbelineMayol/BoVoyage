@@ -8,9 +8,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity(name = "Reservation")
 @Table(name = "Reservation")
+@XmlRootElement
 public class Reservation {
 
 	// Déclaration des attributs
