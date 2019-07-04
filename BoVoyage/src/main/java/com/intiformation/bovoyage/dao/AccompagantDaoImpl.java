@@ -6,9 +6,11 @@ import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.intiformation.bovoyage.entity.Accompagnant;
 
+@Repository
 public class AccompagantDaoImpl implements IAccompagnantDao {
 
 	// création de la session factory d'hibernate

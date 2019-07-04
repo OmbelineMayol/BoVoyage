@@ -1,10 +1,10 @@
-package com.intiformation.bovoyage.dao;
+package com.intiformation.bovoyage.service;
 
 import java.util.List;
 
 import com.intiformation.bovoyage.entity.Client;
 
-public interface IClientDao {
+public interface IClientService {
 
 	public void addClientDao(Client pClient);
 
@@ -15,5 +15,4 @@ public interface IClientDao {
 	public void deleteClientDao(int pIdClient);
 
 	public List<Client> getAllClients();
-
 }

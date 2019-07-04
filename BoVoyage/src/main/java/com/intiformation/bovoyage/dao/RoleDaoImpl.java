@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.intiformation.bovoyage.entity.Role;
 
+@Repository
 public class RoleDaoImpl implements IRoleDao {
 
 	// création de la session factory d'hibernate
@@ -20,9 +22,9 @@ public class RoleDaoImpl implements IRoleDao {
 		this.sessionFactory = sessionFactory;
 	}
 
-	//méthodes
+	// méthodes
 	public void addRoleDao(Role pRole) {
-		//récupération de la session courante
+		// récupération de la session courante
 		sessionFactory.getCurrentSession().save(pRole);
 	}
 

@@ -2,8 +2,6 @@ package com.intiformation.bovoyage.dao;
 
 import java.util.List;
 
-
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,7 @@ public class AgentDaoImpl implements IAgentDao {
 	}
 
 	// ----- Redefinition des methodes
-	
+
 	@Transactional
 	public void addAgentDao(Agent agentIn) {
 
@@ -34,7 +32,7 @@ public class AgentDaoImpl implements IAgentDao {
 		sessionFactory.getCurrentSession().save(agentIn);
 	}// Fin addAgentDao
 
-	@Transactional(readOnly=true)
+	@Transactional(readOnly = true)
 	public Agent getByIdAgentDao(int idAgentIn) {
 
 		return (Agent) sessionFactory.getCurrentSession().get(Agent.class, idAgentIn);
@@ -53,7 +51,7 @@ public class AgentDaoImpl implements IAgentDao {
 
 	}
 
-	@Transactional(readOnly=true)
+	@Transactional(readOnly = true)
 	public List<Agent> getAllAgentDao() {
 		List<Agent> listeAgentOut = sessionFactory.getCurrentSession().createQuery("FROM agent a").list();
 		return listeAgentOut;
