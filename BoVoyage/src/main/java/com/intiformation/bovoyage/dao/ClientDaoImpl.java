@@ -34,6 +34,8 @@ public class ClientDaoImpl implements IClientDao {
 	public Client getByIdClientDao(int pIdClient) {
 		return (Client) sessionFactory.getCurrentSession().get(Client.class, pIdClient);
 	}
+	
+
 
 	@Transactional
 	public void updateClientDao(Client pClient) {

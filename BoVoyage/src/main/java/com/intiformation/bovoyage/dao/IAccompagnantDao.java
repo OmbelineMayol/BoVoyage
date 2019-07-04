@@ -3,6 +3,7 @@ package com.intiformation.bovoyage.dao;
 import java.util.List;
 
 import com.intiformation.bovoyage.entity.Accompagnant;
+import com.intiformation.bovoyage.entity.Client;
 
 public interface IAccompagnantDao {
 
@@ -15,4 +16,6 @@ public interface IAccompagnantDao {
 	public void deleteAccompagnantDao(int pIdAccompagnant);
 
 	public List<Accompagnant> getAllAccompagnant();
+	
+	public List<Accompagnant> getAllAccompagnantByClient(Client clientIn);
 }

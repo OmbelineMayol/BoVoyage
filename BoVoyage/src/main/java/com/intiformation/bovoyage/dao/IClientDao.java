@@ -15,5 +15,7 @@ public interface IClientDao {
 	public void deleteClientDao(int pIdClient);
 
 	public List<Client> getAllClients();
+	
+	
 
 }

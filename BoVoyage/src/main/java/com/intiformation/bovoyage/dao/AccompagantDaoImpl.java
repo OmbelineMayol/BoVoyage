@@ -2,14 +2,16 @@ package com.intiformation.bovoyage.dao;
 
 import java.util.List;
 
-
-
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.intiformation.bovoyage.entity.Accompagnant;
+import com.intiformation.bovoyage.entity.Client;
 
 @Repository
 public class AccompagantDaoImpl implements IAccompagnantDao {
@@ -55,4 +57,27 @@ public class AccompagantDaoImpl implements IAccompagnantDao {
 		return listeAccompagnantOut;   
 	}
 
+	@Transactional(readOnly = true)
+	public List<Accompagnant> getAllAccompagnantByClient( Client clientIn) {
+		
+		// Recuperation de la session
+				Session session = sessionFactory.getCurrentSession();
+		
+		// Creation de la requete HQL
+				String reqHQL = "SELECT ac FROM accompagnant ac, client cl WHERE cl.idClient = ?1";
+
+				// Creation de la requete
+				Query query = session.createQuery(reqHQL);
+
+				// Passage des paramètres
+
+				query.setParameter(1, clientIn.getIdClient());
+
+				// Envoi de la req et récuperation du résultat
+
+		List<Accompagnant> listeOut = query.list();
+
+		return listeOut;   
+	}
+	
 }
