@@ -52,7 +52,7 @@ public class AccompagantDaoImpl implements IAccompagnantDao {
 	@Transactional(readOnly = true)
 	public List<Accompagnant> getAllAccompagnant() {
 		List<Accompagnant> listeAccompagnantOut = sessionFactory.getCurrentSession().createQuery("FROM accompagnant ac").list();
-		return listeAccompagnantOut;
+		return listeAccompagnantOut;   
 	}
 
 }
