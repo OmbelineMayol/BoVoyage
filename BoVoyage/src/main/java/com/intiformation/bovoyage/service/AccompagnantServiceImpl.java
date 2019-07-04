@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.intiformation.bovoyage.dao.IAccompagnantDao;
 import com.intiformation.bovoyage.entity.Accompagnant;
+import com.intiformation.bovoyage.entity.Client;
 
 @Service
 public class AccompagnantServiceImpl implements IAccompagnantService {
@@ -41,8 +42,14 @@ public class AccompagnantServiceImpl implements IAccompagnantService {
 	}
 
 	public List<Accompagnant> getAllAccompagnant() {
-
 		return accompagnantDao.getAllAccompagnant();
 	}
+
+	public List<Accompagnant> getAllAccompagnantByClient(Client clientIn) {
+		
+		return accompagnantDao.getAllAccompagnantByClient(clientIn);
+	}
+	
+	
 
 }
