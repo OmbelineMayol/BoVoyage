@@ -8,5 +8,5 @@
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.intiformation.bovoyage.wsrest" />
-	<mvc:default-servlet-handler />
+	<mvc:default-servlet-handler /> 
 </beans>

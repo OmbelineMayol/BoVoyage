@@ -11,7 +11,7 @@ import com.intiformation.bovoyage.entity.Role;
 @Service
 public class RoleServiceImpl implements IRoleService {
 
-	// Déclaration du DAO
+	// ---------- Déclaration du DAO
 	@Autowired
 	private IRoleDao roleDao;
 
@@ -23,10 +23,10 @@ public class RoleServiceImpl implements IRoleService {
 		this.roleDao = roleDao;
 	}
 
-	// rédéfinition des méthodes
+	// ------- rédéfinition des méthodes
 	public void addRoleService(Role pRole) {
 		roleDao.addRoleDao(pRole);
-		
+
 	}
 
 	public Role getByIdRoleService(int pIdRole) {
@@ -35,16 +35,16 @@ public class RoleServiceImpl implements IRoleService {
 
 	public void updateRoleService(Role pRole) {
 		roleDao.updateRoleDao(pRole);
-		
+
 	}
 
 	public void deleteRoleService(int pIdRole) {
 		roleDao.deleteRoleDao(pIdRole);
-		
+
 	}
 
 	public List<Role> getAllRoles() {
-		
+
 		return roleDao.getAllRoles();
 	}
 
