@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.intiformation.bovoyage.entity.Role;
 
@@ -23,26 +24,27 @@ public class RoleDaoImpl implements IRoleDao {
 	}
 
 	// méthodes
+	@Transactional
 	public void addRoleDao(Role pRole) {
 		// récupération de la session courante
 		sessionFactory.getCurrentSession().save(pRole);
 	}
-
+	@Transactional
 	public Role getByIdRoleDao(int pIdRole) {
 		return (Role) sessionFactory.getCurrentSession().get(Role.class, pIdRole);
 	}
-
+	@Transactional
 	public void updateRoleDao(Role pRole) {
 		sessionFactory.getCurrentSession().update(pRole);
 
 	}
-
+	@Transactional
 	public void deleteRoleDao(int pIdRole) {
 		Role role = (Role) sessionFactory.getCurrentSession().get(Role.class, pIdRole);
 		sessionFactory.getCurrentSession().delete(role);
 
 	}
-
+	@Transactional
 	public List<Role> getAllRoles() {
 		List<Role> listeRoleOut = sessionFactory.getCurrentSession().createQuery("FROM role").list();
 		return listeRoleOut;

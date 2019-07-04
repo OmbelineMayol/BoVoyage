@@ -24,25 +24,25 @@ public class AccompagnantServiceImpl implements IAccompagnantService {
 
 	// redéfinition des méthodes
 	public void addAccompagnantService(Accompagnant pAccompagnant) {
-
+		accompagnantDao.addAccompagnantDao(pAccompagnant);
 	}
 
 	public Accompagnant getByIdAccompagnantService(int pIdAccompagnant) {
 
-		return null;
+		return accompagnantDao.getByIdAccompagnantDao(pIdAccompagnant);
 	}
 
 	public void updateAccompagnantService(Accompagnant pAccompagnant) {
-
+		accompagnantDao.updateAccompagnantDao(pAccompagnant);
 	}
 
 	public void deleteAccompagnantService(int pIdAccompagnant) {
-
+		accompagnantDao.deleteAccompagnantDao(pIdAccompagnant);
 	}
 
 	public List<Accompagnant> getAllAccompagnant() {
 
-		return null;
+		return accompagnantDao.getAllAccompagnant();
 	}
 
 }

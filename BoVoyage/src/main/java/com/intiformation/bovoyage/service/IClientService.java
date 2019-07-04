@@ -6,13 +6,13 @@ import com.intiformation.bovoyage.entity.Client;
 
 public interface IClientService {
 
-	public void addClientDao(Client pClient);
+	public void addClientService(Client pClient);
 
-	public Client getByIdClientDao(int pIdClient);
+	public Client getByIdClientService(int pIdClient);
 
-	public void updateClientDao(Client pClient);
+	public void updateClientService(Client pClient);
 
-	public void deleteClientDao(int pIdClient);
+	public void deleteClientService(int pIdClient);
 
 	public List<Client> getAllClients();
 }

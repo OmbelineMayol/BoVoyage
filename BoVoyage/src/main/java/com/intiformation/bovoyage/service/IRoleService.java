@@ -6,13 +6,13 @@ import com.intiformation.bovoyage.entity.Role;
 
 public interface IRoleService {
 
-	public void addRoleDao(Role pRole);
+	public void addRoleService(Role pRole);
 
-	public Role getByIdRoleDao(int pIdRole);
+	public Role getByIdRoleService(int pIdRole);
 
-	public void updateRoleDao(Role pRole);
+	public void updateRoleService(Role pRole);
 
-	public void deleteRoleDao(int pIdRole);
+	public void deleteRoleService(int pIdRole);
 
 	public List<Role> getAllRoles();
 }

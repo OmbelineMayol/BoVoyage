@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.intiformation.bovoyage.dao.IClientDao;
 import com.intiformation.bovoyage.entity.Client;
 
 @Service
@@ -12,36 +13,37 @@ public class ClientServiceImpl implements IClientService {
 
 	// Déclaration de la couche DAO
 	@Autowired
-	private IClientService clientService;
+	private IClientDao clientDao;
 
 	// setter
-	public void setClientService(IClientService clientService) {
-		this.clientService = clientService;
+	public void setClientDao(IClientDao clientDao) {
+		this.clientDao = clientDao;
 	}
 
-	// Redéfinition des méthodes
-	public void addClientDao(Client pClient) {
-
+	//rédéfinition des méthodes
+	public void addClientService(Client pClient) {
+		clientDao.addClientDao(pClient);
+		
 	}
 
-	public Client getByIdClientDao(int pIdClient) {
-		// TODO Auto-generated method stub
-		return null;
+	public Client getByIdClientService(int pIdClient) {
+		return clientDao.getByIdClientDao(pIdClient);
+		
 	}
 
-	public void updateClientDao(Client pClient) {
-		// TODO Auto-generated method stub
-
+	public void updateClientService(Client pClient) {
+		clientDao.updateClientDao(pClient);
+		
 	}
 
-	public void deleteClientDao(int pIdClient) {
-		// TODO Auto-generated method stub
-
+	public void deleteClientService(int pIdClient) {
+		clientDao.deleteClientDao(pIdClient);
+		
 	}
 
 	public List<Client> getAllClients() {
-		// TODO Auto-generated method stub
-		return null;
+		return clientDao.getAllClients();
 	}
 
+	
 }
