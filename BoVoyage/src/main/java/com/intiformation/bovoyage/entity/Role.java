@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.sun.xml.ws.config.metro.parser.jsr109.String;
+
 
 @Entity(name = "role")
 @Table(name= "roles")

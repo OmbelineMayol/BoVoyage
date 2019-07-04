@@ -8,11 +8,13 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 
+
+
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- LOCALISATION DES FICHIERS DE PROPRIETES-->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<context:property-placeholder location="/WEB-INF/db.properties"/>
+	<context:property-placeholder location="classpath*:db.properties"/>
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- DETECTION DES ANNOTATIONS -->
@@ -47,7 +49,7 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
 	<bean id="sessionFactoryBean"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
 		<!-- 1. Injection du bean de la dataSource -->
 		<property name="dataSource" ref="dataSourceBean" />
@@ -68,8 +70,7 @@
 			<list>
 				<value>com.intiformation.bovoyage.entity.Banque</value>	
 				<value>com.intiformation.bovoyage.entity.Client</value>
-				<value>com.intiformation.bovoyage.entity.Agent</value>
-				<value>com.intiformation.bovoyage.entity.Personne</value>
+				<value>com.intiformation.bovoyage.entity.Agent</value>			
 				<value>com.intiformation.bovoyage.entity.Accompagnant</value>
 				<value>com.intiformation.bovoyage.entity.Role</value>
 				<value>com.intiformation.bovoyage.entity.Reservation</value>
@@ -88,7 +89,7 @@
 	
 	
 	<bean id="transactionManagerBean"
-		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 
 		<!-- Injection du Bean de la sessionFactory dans le manager -->
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
