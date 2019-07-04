@@ -36,7 +36,7 @@ public class RoleDaoImpl implements IRoleDao {
 	}
 
 	public void deleteRoleDao(int pIdRole) {
-		Role role = sessionFactory.getCurrentSession().get(Role.class, pIdRole);
+		Role role = (Role) sessionFactory.getCurrentSession().get(Role.class, pIdRole);
 		sessionFactory.getCurrentSession().delete(role);
 
 	}
