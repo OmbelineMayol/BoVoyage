@@ -3,6 +3,7 @@ package com.intiformation.bovoyage.wsrest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.intiformation.bovoyage.service.IAccompagnantService;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class AccompagnantWSRest {
 	
 	/*--------- ASSOCIATION AVEC LA COUCHE SERVICE -------------- */
@@ -22,7 +24,7 @@ public class AccompagnantWSRest {
 	@Autowired
 	IAccompagnantService accompagnantService;
 	
-	// Setter pour l'injection Sring
+	// Setter pour l'injection Spring
 	
 	public void setAccompagnantService(IAccompagnantService accompagnantService) {
 		this.accompagnantService = accompagnantService;
