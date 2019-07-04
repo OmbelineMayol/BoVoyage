@@ -14,7 +14,6 @@
 	
 	<context:property-placeholder location="/WEB-INF/db.properties"/>
 
-
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- DETECTION DES ANNOTATIONS -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -67,16 +66,16 @@
 
 		<property name="annotatedClasses">
 			<list>
-				<value>com.intiformation.projet.modele.Banque</value>	
-<!-- 				<value>com.intiformation.projet.modele.Client</value> -->
-<!-- 				<value>com.intiformation.projet.modele.Agent</value> -->
-<!-- 				<value>com.intiformation.projet.modele.Personne</value> -->
-<!-- 				<value>com.intiformation.projet.modele.Accompagnant</value> -->
-<!-- 				<value>com.intiformation.projet.modele.Role</value> -->
-<!-- 				<value>com.intiformation.projet.modele.DossierReservation</value> -->
-<!-- 				<value>com.intiformation.projet.modele.Formule</value>	 -->
-<!-- 				<value>com.intiformation.projet.modele.Hotel</value> -->
-<!-- 				<value>com.intiformation.projet.modele.Voiture</value>	 -->
+				<value>com.intiformation.bovoyage.entity.Banque</value>	
+				<value>com.intiformation.bovoyage.entity.Client</value>
+				<value>com.intiformation.bovoyage.entity.Agent</value>
+				<value>com.intiformation.bovoyage.entity.Personne</value>
+				<value>com.intiformation.bovoyage.entity.Accompagnant</value>
+				<value>com.intiformation.bovoyage.entity.Role</value>
+				<value>com.intiformation.bovoyage.entity.Reservation</value>
+				<value>com.intiformation.bovoyage.entity.Formule</value>	
+				<value>com.intiformation.bovoyage.entity.Hotel</value>
+				<value>com.intiformation.bovoyage.entity.Voiture</value>	
 			</list>
 		</property>
 
