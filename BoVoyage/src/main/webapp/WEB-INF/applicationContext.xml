@@ -49,7 +49,7 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
 	<bean id="sessionFactoryBean"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
 		<!-- 1. Injection du bean de la dataSource -->
 		<property name="dataSource" ref="dataSourceBean" />
@@ -89,7 +89,7 @@
 	
 	
 	<bean id="transactionManagerBean"
-		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 
 		<!-- Injection du Bean de la sessionFactory dans le manager -->
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
