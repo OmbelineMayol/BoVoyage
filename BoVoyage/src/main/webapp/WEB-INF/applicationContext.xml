@@ -8,11 +8,13 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 
+
+
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- LOCALISATION DES FICHIERS DE PROPRIETES-->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<context:property-placeholder location="/WEB-INF/db.properties"/>
+	<context:property-placeholder location="classpath*:db.properties"/>
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- DETECTION DES ANNOTATIONS -->
