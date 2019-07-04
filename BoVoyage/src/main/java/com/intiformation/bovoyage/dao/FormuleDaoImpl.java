@@ -100,4 +100,12 @@ public class FormuleDaoImpl implements IFormuleDao {
 		return (Formule) sessionFactory.getCurrentSession().get(Formule.class, idFormule);
 	}
 
+	/**
+	 * Methode qui permet de MAJ une formule
+	 */
+	public void updateFormuleDao(Formule formule) {
+		sessionFactory.getCurrentSession().update(formule);
+		
+	}
+
 }

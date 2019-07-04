@@ -13,5 +13,7 @@ public interface IFormuleService {
 	public List<Formule> getFormuleByContinentService(String nomContinent);
 
 	public Formule getFormuleByIdService(int idFormule);
+	
+	public void updateFormuleService(Formule formule);
 
 }

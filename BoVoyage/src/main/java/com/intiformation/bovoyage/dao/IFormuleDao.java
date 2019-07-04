@@ -13,5 +13,7 @@ public interface IFormuleDao {
 	public List<Formule> getFormuleByContinentDao(String nomContinent);
 	
 	public Formule getFormuleById(int idFormule);
+	
+	public void updateFormuleDao(Formule formule);
 
 }

@@ -53,4 +53,10 @@ public class FormuleServiceImpl implements IFormuleService {
 		return formuleDao.getFormuleById(idFormule);
 	}
 
+	public void updateFormuleService(Formule formule) {
+		formuleDao.updateFormuleDao(formule);
+	}
+	
+	
+
 }
