@@ -2,11 +2,12 @@ package com.intiformation.bovoyage.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
+
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.intiformation.bovoyage.entity.Accompagnant;
 
@@ -51,7 +52,7 @@ public class AccompagantDaoImpl implements IAccompagnantDao {
 	@Transactional(readOnly = true)
 	public List<Accompagnant> getAllAccompagnant() {
 		List<Accompagnant> listeAccompagnantOut = sessionFactory.getCurrentSession().createQuery("FROM accompagnant ac").list();
-		return listeAccompagnantOut;
+		return listeAccompagnantOut;   
 	}
 
 }
