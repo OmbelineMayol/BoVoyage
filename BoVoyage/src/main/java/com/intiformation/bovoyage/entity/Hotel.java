@@ -58,6 +58,8 @@ public class Hotel {
 	}
 
 
+
+
 	/* ----------- DECLARATION DES CONSTRUCTEURS  ---------------------*/
 	
 	public int getIdHotel() {

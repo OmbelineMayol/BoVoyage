@@ -19,10 +19,13 @@ public class Banque {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_banque")
 	private int idBanque;
+	
 	@Column(name = "nom")
 	private String nomBanque;
+	
 	@Column(name = "numeroCB")
 	private double numeroCB;
+	
 	@Column(name = "solde")
 	private double solde;
 

@@ -10,61 +10,53 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-
-
-@Entity(name="accompagnant")
-@Table(name="accompagnants")
+@Entity(name = "accompagnant")
+@Table(name = "accompagnants")
 @XmlRootElement
-public class Accompagnant{
-	
-	/* -------------- DECLARATION DES ATTRIBUTS -----------------*/
-	
+public class Accompagnant {
+
+	/* -------------- DECLARATION DES ATTRIBUTS ----------------- */
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_accompagnant")
 	protected int idAccommpagnant;
-	
+
 	@Column(name = "civilite")
 	protected String civilite;
-	
+
 	@Column(name = "nom")
 	protected String nom;
-	
+
 	@Column(name = "prenom")
 	protected String prenom;
-	
+
 	@Column(name = "age")
 	protected int age;
-	
+
 	@Column(name = "adresse")
 	protected String adresse;
-	
+
 	@Column(name = "telephone")
 	protected String telephone;
-	
+
 	@Column(name = "email")
 	protected String email;
-	
-	
-	/* -------------- ASSOCIATIONS UML -----------------*/
-	
-	@JsonBackReference
+
+	/* -------------- ASSOCIATIONS UML ----------------- */
+
 	@ManyToOne
-	@JoinColumn(name="client_id", referencedColumnName="id_client")
+	@JoinColumn(name = "client_id", referencedColumnName = "id_client")
 	private Client client;
 
-
-	/* -------------- DECLARATION DES CONSTRUCTEURS -----------------*/
-	
+	/* -------------- DECLARATION DES CONSTRUCTEURS ----------------- */
 
 	public Accompagnant() {
 		super();
 	}
-		
+
 	public Accompagnant(String civilite, String nom, String prenom, int age, String adresse, String telephone,
-			String email, Client client) {
+			String email) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
@@ -73,13 +65,10 @@ public class Accompagnant{
 		this.adresse = adresse;
 		this.telephone = telephone;
 		this.email = email;
-		this.client = client;
 	}
 
+	/* ------------- GETTER ET SETTER ----------------- */
 
-
-	/* ------------- GETTER ET SETTER -----------------*/
-	
 	public int getIdAccommpagnant() {
 		return idAccommpagnant;
 	}
@@ -87,8 +76,6 @@ public class Accompagnant{
 	public void setIdAccommpagnant(int idAccommpagnant) {
 		this.idAccommpagnant = idAccommpagnant;
 	}
-
-	
 
 	public String getCivilite() {
 		return civilite;
@@ -153,11 +140,5 @@ public class Accompagnant{
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
-	
-	
-
-
-
 
 }

@@ -32,8 +32,8 @@ public class Voiture {
 	private String photo;
 
 	// Transformation de l'association UML en java
-	@OneToOne(mappedBy="voitureFormule")
-	private Formule formule;
+//	@OneToOne(mappedBy="voitureFormule")
+//	private Formule formule;
 
 	// Déclaration des constructeurs
 	public Voiture() {
@@ -41,12 +41,12 @@ public class Voiture {
 	}
 
 	
-	public Voiture(String categorie, String loueur, String photo, Formule formule) {
+	public Voiture(String categorie, String loueur, String photo) {
 		super();
 		this.categorie = categorie;
 		this.loueur = loueur;
 		this.photo = photo;
-		this.formule = formule;
+		
 	}
 
 	// Déclaration des getters et setters
@@ -74,13 +74,13 @@ public class Voiture {
 		this.loueur = loueur;
 	}
 
-	public Formule getFormule() {
-		return formule;
-	}
-
-	public void setFormule(Formule formule) {
-		this.formule = formule;
-	}
+//	public Formule getFormule() {
+//		return formule;
+//	}
+//
+//	public void setFormule(Formule formule) {
+//		this.formule = formule;
+//	}
 
 
 	public String getPhoto() {

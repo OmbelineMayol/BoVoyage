@@ -58,14 +58,14 @@ public class Client {
 	private int actived;
 
 	// ----- Transformation de l'association UML en java
-	
-	@JsonManagedReference
-	@OneToMany(mappedBy="client")
-	private List<Accompagnant> listeAccompagnants; 
-	
+//	
 
-	@OneToOne(mappedBy="client")
-	private Reservation reservation;
+//	@OneToMany(mappedBy="client")
+//	private List<Accompagnant> listeAccompagnants; 
+//	
+//
+//	@OneToOne(mappedBy="client")
+//	private Reservation reservation;
 
 	// ----- Déclaration des constructeurs
 	public Client() {
@@ -189,21 +189,21 @@ public class Client {
 
 	
 
-	public List<Accompagnant> getListeAccompagnants() {
-		return listeAccompagnants;
-	}
-
-	public void setListeAccompagnants(List<Accompagnant> listeAccompagnants) {
-		this.listeAccompagnants = listeAccompagnants;
-	}
-
-	public Reservation getReservation() {
-		return reservation;
-	}
-
-	public void setReservation(Reservation reservation) {
-		this.reservation = reservation;
-	}
+//	public List<Accompagnant> getListeAccompagnants() {
+//		return listeAccompagnants;
+//	}
+//
+//	public void setListeAccompagnants(List<Accompagnant> listeAccompagnants) {
+//		this.listeAccompagnants = listeAccompagnants;
+//	}
+//
+//	public Reservation getReservation() {
+//		return reservation;
+//	}
+//
+//	public void setReservation(Reservation reservation) {
+//		this.reservation = reservation;
+//	}
 	
 	
 	

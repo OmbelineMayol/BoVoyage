@@ -54,11 +54,11 @@ public class Formule {
 
 	// Association UML en Java
 
-	@OneToMany(mappedBy = "formule")
-	private List<Reservation> listeReservation;
-
-	@OneToMany(mappedBy="formule")
-	private List<Hotel> hotelsFormule;
+//	@OneToMany(mappedBy = "formule")
+//	private List<Reservation> listeReservation;
+//
+//	@OneToMany(mappedBy="formule")
+//	private List<Hotel> hotelsFormule;
 	
 	@OneToOne
 	@JoinColumn(name="voiture_id", referencedColumnName="id_voiture")
@@ -158,13 +158,13 @@ public class Formule {
 		this.placesDispo = placesDispo;
 	}
 
-	public List<Hotel> getHotelsFormule() {
-		return hotelsFormule;
-	}
-
-	public void setHotelsFormule(List<Hotel> hotelsFormule) {
-		this.hotelsFormule = hotelsFormule;
-	}
+//	public List<Hotel> getHotelsFormule() {
+//		return hotelsFormule;
+//	}
+//
+//	public void setHotelsFormule(List<Hotel> hotelsFormule) {
+//		this.hotelsFormule = hotelsFormule;
+//	}
 
 	public Voiture getVoitureFormule() {
 		return voitureFormule;
@@ -182,12 +182,12 @@ public class Formule {
 		this.disponibilite = disponibilite;
 	}
 
-	public List<Reservation> getListeReservation() {
-		return listeReservation;
-	}
-
-	public void setListeReservation(List<Reservation> listeReservation) {
-		this.listeReservation = listeReservation;
-	}
+//	public List<Reservation> getListeReservation() {
+//		return listeReservation;
+//	}
+//
+//	public void setListeReservation(List<Reservation> listeReservation) {
+//		this.listeReservation = listeReservation;
+//	}
 
 }
