@@ -81,6 +81,16 @@ public class ClientWSRest {
 		clientService.deleteClientService(idClientIn);
 
 	}
+	
+	/**
+	 * Authentification du client 
+	 * @param pClient
+	 * @return
+	 */
+	@RequestMapping(value="/clients/isExist", method=RequestMethod.POST, produces="application/json", consumes="application/json")
+	public Client isExist(@RequestBody Client pClient) {
+		return clientService.isExist(pClient.getEmail(), pClient.getPassword());
+	}
 
 
 }
