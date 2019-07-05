@@ -25,7 +25,7 @@ public class Accompagnant{
 	protected int idAccommpagnant;
 	
 	@Column(name = "civilite")
-	protected int civilite;
+	protected String civilite;
 	
 	@Column(name = "nom")
 	protected String nom;
@@ -61,7 +61,7 @@ public class Accompagnant{
 		super();
 	}
 		
-	public Accompagnant(int civilite, String nom, String prenom, int age, String adresse, String telephone,
+	public Accompagnant(String civilite, String nom, String prenom, int age, String adresse, String telephone,
 			String email, Client client) {
 		super();
 		this.civilite = civilite;
@@ -74,6 +74,8 @@ public class Accompagnant{
 		this.client = client;
 	}
 
+
+
 	/* ------------- GETTER ET SETTER -----------------*/
 	
 	public int getIdAccommpagnant() {
@@ -84,11 +86,13 @@ public class Accompagnant{
 		this.idAccommpagnant = idAccommpagnant;
 	}
 
-	public int getCivilite() {
+	
+
+	public String getCivilite() {
 		return civilite;
 	}
 
-	public void setCivilite(int civilite) {
+	public void setCivilite(String civilite) {
 		this.civilite = civilite;
 	}
 
