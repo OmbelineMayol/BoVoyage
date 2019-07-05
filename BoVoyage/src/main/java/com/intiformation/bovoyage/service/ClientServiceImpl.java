@@ -45,5 +45,11 @@ public class ClientServiceImpl implements IClientService {
 		return clientDao.getAllClients();
 	}
 
+	@Override
+	public Client isExist(String email, String mdp) {
+		
+		return clientDao.isExist(email, mdp);
+	}
+
 	
 }

@@ -2,6 +2,8 @@ package com.intiformation.bovoyage.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -52,6 +54,41 @@ public class ClientDaoImpl implements IClientDao {
 	public List<Client> getAllClients() {
 		List<Client> listeClientOut = sessionFactory.getCurrentSession().createQuery("FROM client cl").list();
 		return listeClientOut;
+	}
+
+	@Override
+	public Client isExist(String email, String mdp) {
+		
+		// Recuperation de la session 
+		Session session = sessionFactory.getCurrentSession();
+		
+		// Creation de la requete HQL
+		String reqHql ="SELECT cl FROM client cl WHERE cl.email=?1 AND cl.password=?2";
+		
+		// Creation de la requete
+		
+		Query query = session.createQuery(reqHql);
+		
+		// Passage des paramètres à la requete
+		
+		query.setParameter(1, email);
+		query.setParameter(2, mdp);
+		
+		// Récupération du résultat
+		
+		List<Client> listOut = query.list();
+		
+		// Interprétation du résultat
+		
+		Client client = new Client();
+		
+		for (Client cl : listOut) {
+			client = cl;
+		}
+		
+		// renvoie du resultat
+		
+		return client;
 	}
 
 }

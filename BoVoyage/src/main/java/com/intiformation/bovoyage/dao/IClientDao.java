@@ -16,6 +16,8 @@ public interface IClientDao {
 
 	public List<Client> getAllClients();
 	
+	public Client isExist(String email, String mdp);
+	
 	
 
 }

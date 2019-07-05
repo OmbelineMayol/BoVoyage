@@ -15,4 +15,6 @@ public interface IClientService {
 	public void deleteClientService(int pIdClient);
 
 	public List<Client> getAllClients();
+	
+	public Client isExist(String email, String mdp);
 }
