@@ -26,7 +26,7 @@ public class Client {
 	protected int idClient;
 	
 	@Column(name = "civilite")
-	protected int civilite;
+	protected String civilite;
 	
 	@Column(name = "nom")
 	protected String nom;
@@ -70,7 +70,10 @@ public class Client {
 		super();
 	}
 
-	public Client(int civilite, String nom, String prenom, int age, String adresse, String telephone, String email,
+	
+	// ----- Déclaration des getters et setters
+
+	public Client(String civilite, String nom, String prenom, int age, String adresse, String telephone, String email,
 			String password, double numCB, int actived, Role role, List<Accompagnant> listeAccompagnants,
 			Reservation reservation) {
 		super();
@@ -88,7 +91,7 @@ public class Client {
 		this.listeAccompagnants = listeAccompagnants;
 		this.reservation = reservation;
 	}
-	// ----- Déclaration des getters et setters
+
 
 	public int getIdClient() {
 		return idClient;
@@ -98,13 +101,16 @@ public class Client {
 		this.idClient = idClient;
 	}
 
-	public int getCivilite() {
+	
+	public String getCivilite() {
 		return civilite;
 	}
 
-	public void setCivilite(int civilite) {
+
+	public void setCivilite(String civilite) {
 		this.civilite = civilite;
 	}
+
 
 	public String getNom() {
 		return nom;

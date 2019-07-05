@@ -34,7 +34,7 @@ public class FormuleDaoImpl implements IFormuleDao {
 	@Transactional(readOnly = true)
 	public List<Formule> getAllFormuleDao() {
 		// TODO Auto-generated method stub
-		return sessionFactory.getCurrentSession().createQuery("FROM formule").list();
+		return sessionFactory.getCurrentSession().createQuery("SELECT f FROM formule f").list();
 	}
 
 	/**

@@ -28,6 +28,9 @@ public class Voiture {
 	@Column(name= "loueur")
 	private String loueur;
 
+	@Column(name= "photo")
+	private String photo;
+
 	// Transformation de l'association UML en java
 	@OneToOne(mappedBy="voitureFormule")
 	private Formule formule;
@@ -37,12 +40,14 @@ public class Voiture {
 		super();
 	}
 
-	public Voiture(String categorie, String loueur) {
+	
+	public Voiture(String categorie, String loueur, String photo, Formule formule) {
 		super();
 		this.categorie = categorie;
 		this.loueur = loueur;
+		this.photo = photo;
+		this.formule = formule;
 	}
-
 
 	// Déclaration des getters et setters
 	public int getIdVoiture() {
@@ -76,5 +81,16 @@ public class Voiture {
 	public void setFormule(Formule formule) {
 		this.formule = formule;
 	}
+
+
+	public String getPhoto() {
+		return photo;
+	}
+
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+	
 
 }
