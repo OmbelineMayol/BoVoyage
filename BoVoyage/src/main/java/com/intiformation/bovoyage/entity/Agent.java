@@ -31,11 +31,8 @@ public class Agent {
 	@Column(name= "actived")
 	private int actived;
 	
-	//Transformation de l'association UML en java
-	
-	@OneToMany(mappedBy="agent")
-	private List<Role> role;
-	
+		
+
 	//Déclaration des constructeurs
 	
 	public Agent() {
@@ -75,12 +72,7 @@ public class Agent {
 	public void setActived(int actived) {
 		this.actived = actived;
 	}
-	public List<Role> getRole() {
-		return role;
-	}
-	public void setRole(List<Role> role) {
-		this.role = role;
-	}
+	
 	
 	
 	

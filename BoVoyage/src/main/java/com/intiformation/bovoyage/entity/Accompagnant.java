@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 
 @Entity(name="accompagnant")
@@ -48,7 +50,7 @@ public class Accompagnant{
 	
 	/* -------------- ASSOCIATIONS UML -----------------*/
 	
-	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="client_id", referencedColumnName="id_client")
 	private Client client;

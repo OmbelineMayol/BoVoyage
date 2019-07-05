@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 
 @Entity(name= "client")
@@ -56,12 +58,12 @@ public class Client {
 	private int actived;
 
 	// ----- Transformation de l'association UML en java
-	@OneToOne(mappedBy="client")
-	private Role role;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="client")
 	private List<Accompagnant> listeAccompagnants; 
 	
+
 	@OneToOne(mappedBy="client")
 	private Reservation reservation;
 
@@ -69,13 +71,9 @@ public class Client {
 	public Client() {
 		super();
 	}
-
 	
-	// ----- Déclaration des getters et setters
-
 	public Client(String civilite, String nom, String prenom, int age, String adresse, String telephone, String email,
-			String password, double numCB, int actived, Role role, List<Accompagnant> listeAccompagnants,
-			Reservation reservation) {
+			String password, double numCB, int actived) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
@@ -87,15 +85,20 @@ public class Client {
 		this.password = password;
 		this.numCB = numCB;
 		this.actived = actived;
-		this.role = role;
-		this.listeAccompagnants = listeAccompagnants;
-		this.reservation = reservation;
 	}
+
+
+	// ----- Déclaration des getters et setters
+
+	
 
 
 	public int getIdClient() {
 		return idClient;
 	}
+
+	
+
 
 	public void setIdClient(int idClient) {
 		this.idClient = idClient;
@@ -184,13 +187,7 @@ public class Client {
 		this.actived = actived;
 	}
 
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
+	
 
 	public List<Accompagnant> getListeAccompagnants() {
 		return listeAccompagnants;
