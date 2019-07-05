@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.intiformation.bovoyage.entity.Formule;
-import com.intiformation.bovoyage.entity.Hotel;
 
 @Repository
 public class FormuleDaoImpl implements IFormuleDao {
@@ -47,14 +46,14 @@ public class FormuleDaoImpl implements IFormuleDao {
 
 		// 2. Creation de la requeteHQL
 
-		String reqHQL = "SELECT f FROM formule f WHERE f.pays=?1";
+		String reqHQL = "SELECT f FROM formule f WHERE f.pays = ?";
 
 		// 3. Creation de la requete
 		Query query = session.createQuery(reqHQL);
 
 		// 4. Passage des paramètres dans la requete
 
-		query.setParameter(1, nomPays);
+		query.setParameter(0, nomPays);
 
 		// 5. Envoi de la requete et recuperation du resultat
 
@@ -103,6 +102,7 @@ public class FormuleDaoImpl implements IFormuleDao {
 	/**
 	 * Methode qui permet de MAJ une formule
 	 */
+	@Transactional
 	public void updateFormuleDao(Formule formule) {
 		sessionFactory.getCurrentSession().update(formule);
 		
