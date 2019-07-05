@@ -74,14 +74,14 @@ public class FormuleDaoImpl implements IFormuleDao {
 
 		// 2. Creation de la requeteHQL
 
-		String reqHQL = "SELECT f FROM formule f WHERE f.continent=?1";
+		String reqHQL = "SELECT f FROM formule f WHERE f.continent=?";
 
 		// 3. Creation de la requete
 		Query query = session.createQuery(reqHQL);
 
 		// 4. Passage des paramètres dans la requete
 
-		query.setParameter(1, nomContinent);
+		query.setParameter(0, nomContinent);
 
 		// 5. Envoi de la requete et recuperation du resultat
 

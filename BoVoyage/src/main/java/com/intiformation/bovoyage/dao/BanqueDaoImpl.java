@@ -38,13 +38,13 @@ public class BanqueDaoImpl implements IBanqueDao{
 		Session session = sessionFactory.getCurrentSession();
 		
 		//2. création de la requête HQL
-		String reqHQL = "SELECT b FROM banque b WHERE b.numeroCB=?1";
+		String reqHQL = "SELECT b FROM banque b WHERE b.numeroCB=?";
 		
 		//3. création de la requête
 		Query query = session.createQuery(reqHQL);
 		
 		//4. passage des params dans la requête
-		query.setParameter(1, numCb);
+		query.setParameter(0, numCb);
 		
 		//5. envoi de la requête et récupération du résultat
 		

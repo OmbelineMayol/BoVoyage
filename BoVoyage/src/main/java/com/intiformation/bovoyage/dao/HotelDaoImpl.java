@@ -72,14 +72,14 @@ public class HotelDaoImpl implements IHotelDao {
 		
 		// 2. Creation de la requeteHQL
 		
-		String reqHQL ="SELECT h FROM hotel h, formule f WHERE h.formule.idFormule=?1";
+		String reqHQL ="SELECT h FROM hotel h, formule f WHERE h.formule.idFormule=?";
 		
 		// 3. Creation de la requete
 		Query query = session.createQuery(reqHQL);
 		
 		// 4. Passage des paramètres dans la requete
 		
-		query.setParameter(1, idFormule);
+		query.setParameter(0, idFormule);
 		
 		// 5. Envoi de la requete et recuperation du resultat
 		

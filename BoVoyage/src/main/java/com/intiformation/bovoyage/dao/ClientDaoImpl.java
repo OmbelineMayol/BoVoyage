@@ -63,7 +63,7 @@ public class ClientDaoImpl implements IClientDao {
 		Session session = sessionFactory.getCurrentSession();
 		
 		// Creation de la requete HQL
-		String reqHql ="SELECT cl FROM client cl WHERE cl.email=?1 AND cl.password=?2";
+		String reqHql ="SELECT cl FROM client cl WHERE cl.email=? AND cl.password=?";
 		
 		// Creation de la requete
 		
@@ -71,8 +71,8 @@ public class ClientDaoImpl implements IClientDao {
 		
 		// Passage des paramètres à la requete
 		
-		query.setParameter(1, email);
-		query.setParameter(2, mdp);
+		query.setParameter(0, email);
+		query.setParameter(1, mdp);
 		
 		// Récupération du résultat
 		
