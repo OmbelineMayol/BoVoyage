@@ -28,9 +28,6 @@ public class Agent {
 	@Column(name= "password")
 	private String password;
 	
-	@Column(name= "actived")
-	private int actived;
-	
 		
 
 	//Déclaration des constructeurs
@@ -38,14 +35,14 @@ public class Agent {
 	public Agent() {
 		super();
 	}
-	public Agent(String username, String password, int actived) {
+		
+	public Agent(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.actived = actived;
 	}
-	
-	
+
+
 	//Déclaration des getters et setters
 	
 	public int getIdAgent() {
@@ -66,13 +63,6 @@ public class Agent {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getActived() {
-		return actived;
-	}
-	public void setActived(int actived) {
-		this.actived = actived;
-	}
-	
 	
 	
 	

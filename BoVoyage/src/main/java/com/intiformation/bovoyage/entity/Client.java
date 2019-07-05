@@ -54,8 +54,6 @@ public class Client {
 	@Column(name = "numCB")
 	private double numCB;
 	
-	@Column(name = "actived")
-	private int actived;
 
 	// ----- Transformation de l'association UML en java
 //	
@@ -73,7 +71,7 @@ public class Client {
 	}
 	
 	public Client(String civilite, String nom, String prenom, int age, String adresse, String telephone, String email,
-			String password, double numCB, int actived) {
+			String password, double numCB) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
@@ -84,22 +82,19 @@ public class Client {
 		this.email = email;
 		this.password = password;
 		this.numCB = numCB;
-		this.actived = actived;
 	}
+
+	
 
 
 	// ----- Déclaration des getters et setters
 
 	
-
-
 	public int getIdClient() {
 		return idClient;
 	}
 
 	
-
-
 	public void setIdClient(int idClient) {
 		this.idClient = idClient;
 	}
@@ -179,14 +174,7 @@ public class Client {
 		this.numCB = numCB;
 	}
 
-	public int getActived() {
-		return actived;
-	}
-
-	public void setActived(int actived) {
-		this.actived = actived;
-	}
-
+	
 	
 
 //	public List<Accompagnant> getListeAccompagnants() {
