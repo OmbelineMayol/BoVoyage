@@ -74,7 +74,8 @@ public class AgentWSRest {
 	@RequestMapping(value = "/agents/delete/{idAgent}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deleteAgent(@PathVariable("idAgent") int idAgentIn) {
 		agentService.deleteAgentService(idAgentIn);
-
 	}
+	
+	 
 
 }

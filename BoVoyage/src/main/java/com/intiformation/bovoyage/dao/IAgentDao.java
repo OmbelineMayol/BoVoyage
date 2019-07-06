@@ -3,6 +3,7 @@ package com.intiformation.bovoyage.dao;
 import java.util.List;
 
 import com.intiformation.bovoyage.entity.Agent;
+import com.intiformation.bovoyage.entity.Client;
 
 public interface IAgentDao {
 
@@ -15,5 +16,7 @@ public interface IAgentDao {
 	public void deleteAgentDao(int idAgentIn);
 
 	public List<Agent> getAllAgentDao();
+	
+	public Agent isExist(String username, String password);
 
 }

@@ -47,4 +47,10 @@ public class AgentServiceImpl implements IAgentService {
 		return agentDao.getAllAgentDao();
 	}
 
+
+	@Override
+	public Agent isExist(String username, String password) {
+		return agentDao.isExist(username, password);
+	}
+
 }

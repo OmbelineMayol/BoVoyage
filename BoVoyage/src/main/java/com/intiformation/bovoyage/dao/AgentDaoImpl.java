@@ -2,6 +2,7 @@ package com.intiformation.bovoyage.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +57,37 @@ public class AgentDaoImpl implements IAgentDao {
 		List<Agent> listeAgentOut = sessionFactory.getCurrentSession().createQuery("FROM agent a").list();
 		return listeAgentOut;
 	}
+
+	@Override
+	@Transactional
+	public Agent isExist(String username, String password) {
+		// Recuperation de la session
+		Session session = sessionFactory.getCurrentSession();
+		
+		// Creation de la requete HQL
+		String reqHql = "SELECT ag FROM agent ag WHERE ag.username= ? AND ag.password=?";
+		
+		// Creation de la query
+		Query query = session.createQuery(reqHql);
+		
+		// Passage des paramètres de la requetes
+		query.setParameter(0, username);
+		query.setParameter(1, password);
+		
+		// Envoi de la requete et recuperation du resultat
+		List<Agent> listOut = query.list();
+		
+		// Interpretation du resultat
+		
+		Agent agent = new Agent();
+		
+		for (Agent agt : listOut) {
+			agent = agt;
+		}
+		
+		return agent;
+	}
+	
+	
 
 }

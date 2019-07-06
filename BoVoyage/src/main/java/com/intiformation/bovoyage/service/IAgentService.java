@@ -15,5 +15,7 @@ public interface IAgentService {
 	public void deleteAgentService(int idAgentIn);
 
 	public List<Agent> getAllAgentService();
+	
+	public Agent isExist(String username, String password);
 
 }
