@@ -57,6 +57,7 @@ public class ClientDaoImpl implements IClientDao {
 	}
 
 	@Override
+	@Transactional
 	public Client isExist(String email, String mdp) {
 		
 		// Recuperation de la session 
