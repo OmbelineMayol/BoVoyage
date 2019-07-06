@@ -38,13 +38,13 @@ public class Formule {
 	private String pays;
 
 	@Column(name = "Prix")
-	private String prix;
+	private double prix;
 
 	@Column(name = "Hebergement")
 	private String hebergement;
 
 	@Column(name = "NumeroAvion")
-	private double numeroAvion;
+	private int numeroAvion;
 
 	@Column(name = "PlacesDispo")
 	private int placesDispo;
@@ -69,8 +69,8 @@ public class Formule {
 	public Formule() {
 	}
 
-	public Formule(String dateDebut, String dateFin, String continent, String pays, String prix, String hebergement,
-			double numeroAvion, int placesDispo, int disponibilite) {
+	public Formule(String dateDebut, String dateFin, String continent, String pays, double prix, String hebergement,
+			int numeroAvion, int placesDispo, int disponibilite) {
 		super();
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
@@ -126,11 +126,11 @@ public class Formule {
 		this.pays = pays;
 	}
 
-	public String getPrix() {
+	public double getPrix() {
 		return prix;
 	}
 
-	public void setPrix(String prix) {
+	public void setPrix(double prix) {
 		this.prix = prix;
 	}
 
@@ -142,11 +142,11 @@ public class Formule {
 		this.hebergement = hebergement;
 	}
 
-	public double getNumeroAvion() {
+	public int getNumeroAvion() {
 		return numeroAvion;
 	}
 
-	public void setNumeroAvion(double numeroAvion) {
+	public void setNumeroAvion(int numeroAvion) {
 		this.numeroAvion = numeroAvion;
 	}
 
