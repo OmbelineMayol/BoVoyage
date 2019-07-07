@@ -77,7 +77,7 @@ public class AgentWSRest {
 	}
 	
 	@RequestMapping(value="/agents/isExist", method=RequestMethod.POST, produces= "application/json",consumes="application/json")
-	public Agent isExist (Agent agent) {
+	public Agent isExist (@RequestBody Agent agent) {
 		return agentService.isExist(agent.getUsername(), agent.getPassword());
 	}
 

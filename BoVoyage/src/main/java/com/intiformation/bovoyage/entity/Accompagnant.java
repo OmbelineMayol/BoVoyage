@@ -20,7 +20,7 @@ public class Accompagnant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_accompagnant")
-	protected int idAccommpagnant;
+	protected int idAccompagnant;
 
 	@Column(name = "civilite")
 	protected String civilite;
@@ -69,12 +69,12 @@ public class Accompagnant {
 
 	/* ------------- GETTER ET SETTER ----------------- */
 
-	public int getIdAccommpagnant() {
-		return idAccommpagnant;
+	public int getIdAccompagnant() {
+		return idAccompagnant;
 	}
 
-	public void setIdAccommpagnant(int idAccommpagnant) {
-		this.idAccommpagnant = idAccommpagnant;
+	public void setIdAccompagnant(int idAccompagnant) {
+		this.idAccompagnant = idAccompagnant;
 	}
 
 	public String getCivilite() {

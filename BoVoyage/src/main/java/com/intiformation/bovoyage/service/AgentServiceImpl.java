@@ -48,7 +48,7 @@ public class AgentServiceImpl implements IAgentService {
 	}
 
 
-	@Override
+	
 	public Agent isExist(String username, String password) {
 		return agentDao.isExist(username, password);
 	}

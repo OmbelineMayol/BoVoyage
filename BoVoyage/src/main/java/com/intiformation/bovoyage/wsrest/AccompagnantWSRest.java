@@ -47,8 +47,8 @@ public class AccompagnantWSRest {
 	 * Liste des accompagnants d'un client
 	 * @return
 	 */
-	@RequestMapping(value = "/accompagnants/getAllByClient", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<Accompagnant> getAllAccompagnantsByClient(Client clientIn) {
+	@RequestMapping(value = "/accompagnants/getAllByClient", method = RequestMethod.POST, headers = "Accept=application/json")
+	public List<Accompagnant> getAllAccompagnantsByClient(@RequestBody Client clientIn) {
 		List<Accompagnant> listeAccompagnantsByClient = accompagnantService.getAllAccompagnantByClient(clientIn);
 		return listeAccompagnantsByClient;
 	}

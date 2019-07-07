@@ -66,14 +66,14 @@ public class AccompagantDaoImpl implements IAccompagnantDao {
 		Session session = sessionFactory.getCurrentSession();
 
 		// Creation de la requete HQL
-		String reqHQL = "SELECT ac FROM accompagnant ac, client cl WHERE cl.idClient = ?1";
+		String reqHQL = "SELECT ac FROM accompagnant ac WHERE ac.client.idClient = ?";
 
 		// Creation de la requete
 		Query query = session.createQuery(reqHQL);
 
 		// Passage des paramètres
 
-		query.setParameter(1, clientIn.getIdClient());
+		query.setParameter(0, clientIn.getIdClient());
 
 		// Envoi de la req et récuperation du résultat
 
